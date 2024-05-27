@@ -3,7 +3,7 @@ body {
     background-color: #1a1a2e;
     color: #ffffff;
 }
-h1, h2 {
+h1, h2, h3 {
     font-weight: bold;
 }
 .wave {
@@ -31,8 +31,8 @@ h1, h2 {
 .navbar-nav .nav-item {
     margin-left: 1em;
 }
-.nav-link:hover, .nav-link:focus, .nav-link.active {
-    text-decoration: none;
+.nav-link, .nav-link:hover, .nav-link:focus, .nav-link.active {
+    text-decoration: none !important;
 }
 .nav-link.active {
     border: 2px solid white;
@@ -47,28 +47,28 @@ h1, h2 {
 .btn-dark:hover {
     background-color: #495057;
 }
-.contact-card, .blog-card {
-    height: 300px;
+.contact-card, .blog-card, .project-card {
     border-radius: 15px;
     transition: transform 0.3s, border 0.3s;
     text-decoration: none;
 }
-.contact-card:hover, .blog-card:hover {
+.contact-card:hover, .blog-card:hover, .project-card:hover {
     transform: scale(1.05);
     border: 2px solid #fff;
 }
-.blog-title {
+.blog-title, .project-title {
     background-color: #ffffff;
     color: #000000;
     border-radius: 5px;
     padding: 5px;
     display: inline-block;
 }
-.blog-card a {
-    text-decoration: none;
+a, a:hover, a:focus {
+    text-decoration: none !important;
 }
-.blog-card:hover a {
-    text-decoration: none;
+.project-icons i {
+    margin-right: 10px;
+    font-size: 1.5em;
 }
 section {
     padding: 2em;
