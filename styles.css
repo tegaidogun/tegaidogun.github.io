@@ -26,9 +26,13 @@ h1, h2 {
 }
 .navbar-brand, .nav-link {
     font-size: 1.2em;
+    text-decoration: none;
 }
 .navbar-nav .nav-item {
     margin-left: 1em;
+}
+.nav-link:hover, .nav-link:focus, .nav-link.active {
+    text-decoration: none;
 }
 .nav-link.active {
     border: 2px solid white;
@@ -59,6 +63,12 @@ h1, h2 {
     border-radius: 5px;
     padding: 5px;
     display: inline-block;
+}
+.blog-card a {
+    text-decoration: none;
+}
+.blog-card:hover a {
+    text-decoration: none;
 }
 section {
     padding: 2em;
