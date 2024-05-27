@@ -1,0 +1,61 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+}
+h1, h2 {
+    font-weight: bold;
+}
+.wave {
+    animation: wave-animation 2s infinite;
+    display: inline-block;
+    transform-origin: 70% 70%;
+}
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+.highlight {
+    color: #28a745;
+}
+.navbar-brand, .nav-link {
+    font-size: 1.2em;
+}
+.navbar-nav .nav-item {
+    margin-left: 1em;
+}
+.nav-link.active {
+    border: 2px solid white;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+.btn-dark {
+    background-color: #343a40;
+    border: none;
+}
+.btn-dark:hover {
+    background-color: #495057;
+}
+.contact-card, .blog-card {
+    height: 200px;
+    border-radius: 15px;
+    transition: transform 0.3s, border 0.3s;
+    text-decoration: none;
+}
+.contact-card:hover, .blog-card:hover {
+    transform: scale(1.05);
+    border: 2px solid #fff;
+}
+section {
+    padding: 2em;
+}
+footer {
+    margin-top: 2em;
+}
