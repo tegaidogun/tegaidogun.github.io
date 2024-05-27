@@ -44,7 +44,7 @@ h1, h2 {
     background-color: #495057;
 }
 .contact-card, .blog-card {
-    height: 200px;
+    height: 300px;
     border-radius: 15px;
     transition: transform 0.3s, border 0.3s;
     text-decoration: none;
@@ -52,6 +52,13 @@ h1, h2 {
 .contact-card:hover, .blog-card:hover {
     transform: scale(1.05);
     border: 2px solid #fff;
+}
+.blog-title {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
 }
 section {
     padding: 2em;
