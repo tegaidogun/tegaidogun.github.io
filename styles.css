@@ -21,6 +21,14 @@ h1, h2, h3 {
     60% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
 }
+.highlight {
+    display: inline-block;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 .card-body{
     padding: 0px;
 }
@@ -86,4 +94,12 @@ footer {
     text-decoration: none;
     color: #000000;
     background-color: #ffffff;
+}
+
+/* New styles for the thumbnail */
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
 }
