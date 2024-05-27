@@ -21,6 +21,9 @@ h1, h2, h3 {
     60% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
 }
+.card-body{
+    padding: 0px;
+}
 .navbar-brand, .nav-link {
     font-size: 1.2em;
     text-decoration: none;
@@ -43,6 +46,10 @@ h1, h2, h3 {
     border-radius: 15px;
     transition: transform 0.3s, border 0.3s;
     text-decoration: none;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .contact-card:hover, .project-card:hover, .blog-card:hover {
     transform: scale(1.05);
@@ -68,11 +75,12 @@ footer {
     margin-top: 2em;
 }
 .project-title, .blog-title {
-    display: inline;
+    display: inline-block;
     color: #000000;
     background-color: #ffffff;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 .project-title:hover, .project-title:focus, .blog-title:hover, .blog-title:focus {
     text-decoration: none;
