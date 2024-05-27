@@ -21,9 +21,6 @@ h1, h2, h3 {
     60% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
 }
-.highlight {
-    color: #28a745;
-}
 .navbar-brand, .nav-link {
     font-size: 1.2em;
     text-decoration: none;
@@ -40,39 +37,45 @@ h1, h2, h3 {
     background-color: #ffffff;
     border-radius: 5px;
 }
-.btn-dark {
-    background-color: #343a40;
-    border: none;
-}
-.btn-dark:hover {
-    background-color: #495057;
-}
-.contact-card, .blog-card, .project-card {
+.contact-card, .project-card, .blog-card {
+    width: 100%;
+    height: 200px;
     border-radius: 15px;
     transition: transform 0.3s, border 0.3s;
     text-decoration: none;
 }
-.contact-card:hover, .blog-card:hover, .project-card:hover {
+.contact-card:hover, .project-card:hover, .blog-card:hover {
     transform: scale(1.05);
     border: 2px solid #fff;
 }
-.blog-title, .project-title {
-    background-color: #ffffff;
-    color: #000000;
-    border-radius: 5px;
-    padding: 5px;
-    display: inline-block;
+.project-icons i, .icon-placeholder i {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+.icon-placeholder {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
 }
 a, a:hover, a:focus {
     text-decoration: none !important;
-}
-.project-icons i {
-    margin-right: 10px;
-    font-size: 1.5em;
 }
 section {
     padding: 2em;
 }
 footer {
     margin-top: 2em;
+}
+.project-title, .blog-title {
+    display: inline;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+}
+.project-title:hover, .project-title:focus, .blog-title:hover, .blog-title:focus {
+    text-decoration: none;
+    color: #000000;
+    background-color: #ffffff;
 }
