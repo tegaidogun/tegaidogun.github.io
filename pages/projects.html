@@ -8,7 +8,6 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/fontawesome.min.css"> <!-- Include Font Awesome CSS -->
 </head>
 <body class="bg-dark text-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,64 +26,9 @@
             </ul>
         </div>
     </nav>
-    <section id="projects" class="container my-5">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <a href="#" class="card bg-secondary text-light project-card">
-                    <div class="card-body">
-                        <div class="icon-placeholder"><i class="fab fa-react"></i></div>
-                        <h5 class="card-title project-title">Top Project 1</h5>
-                        <p class="card-text subtitle"><span class="highlight">Tools</span> Python, Django</p>
-                        <p class="card-text">Description of the first top project.</p>
-                        <div class="project-icons">
-                            <i class="fab fa-python"></i>
-                            <i class="fas fa-database"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="#" class="card bg-secondary text-light project-card">
-                    <div class="card-body">
-                        <div class="icon-placeholder"><i class="fab fa-react"></i></div>
-                        <h5 class="card-title project-title">Top Project 2</h5>
-                        <p class="card-text subtitle"><span class="highlight">Tools</span> React, Node.js</p>
-                        <p class="card-text">Description of the second top project.</p>
-                        <div class="project-icons">
-                            <i class="fab fa-react"></i>
-                            <i class="fab fa-node-js"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="#" class="card bg-secondary text-light project-card">
-                    <div class="card-body">
-                        <div class="icon-placeholder"><i class="fab fa-react"></i></div>
-                        <h5 class="card-title project-title">Top Project 3</h5>
-                        <p class="card-text subtitle"><span class="highlight">Tools</span> Unity, C#</p>
-                        <p class="card-text">Description of the third top project.</p>
-                        <div class="project-icons">
-                            <i class="fab fa-unity"></i>
-                            <i class="fas fa-code"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-4">
-                <a href="#" class="card bg-secondary text-light project-card">
-                    <div class="card-body">
-                        <div class="icon-placeholder"><i class="fab fa-react"></i></div>
-                        <h5 class="card-title project-title">Top Project 4</h5>
-                        <p class="card-text subtitle"><span class="highlight">Tools:</span> TensorFlow, Python</p>
-                        <p class="card-text">Description of the fourth top project.</p>
-                        <div class="project-icons">
-                            <i class="fab fa-python"></i>
-                            <i class="fas fa-brain"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
+    <section id="projects" class="container my-5 projects-container">
+        <div class="row" id="projects-list">
+            <!-- Project cards will be appended here by JavaScript -->
         </div>
         <p>More projects on my <a href="https://github.com/tegaidogun" class="text-primary">GitHub profile</a>.</p>
     </section>
@@ -97,5 +41,7 @@
     <script src="../vendor/popper.min.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="../vendor/bootstrap.min.js"></script>
+    <!-- Custom Script -->
+    <script src="../js/projects.js"></script>
 </body>
 </html>
