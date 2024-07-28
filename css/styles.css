@@ -31,6 +31,8 @@ h1, h2, h3 {
 }
 .card-body {
     padding: 0px;
+    display: flex;
+    flex-direction: column;
 }
 .navbar-brand, .nav-link {
     font-size: 1.2em;
@@ -65,7 +67,7 @@ h1, h2, h3 {
     border: 2px solid #fff;
 }
 .project-icons i, .icon-placeholder i {
-    font-size: 1.5em;
+    font-size: 2em; /* Increased icon size */
     margin-right: 10px;
 }
 .icon-placeholder {
@@ -103,29 +105,35 @@ footer {
     border-radius: 50%;
     object-fit: cover;
 }
+.blogs-container {
+    max-width: 80%;
+}
 .projects-container {
     max-width: 80%;
     padding: 0 15px;
 }
 .project-description {
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 50px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Change this number to control the number of lines before truncation */
+    -webkit-box-orient: vertical;
+    max-height: 4.5em; /* Adjust this value based on the font-size and line height */
 }
 .project-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto; /* Ensure footer stays at the bottom */
 }
 .project-icons {
     display: flex;
     align-items: center;
 }
 .project-icons i {
-    font-size: 1.2em;
+    font-size: 2em; /* Increased icon size */
     margin-right: 10px;
 }
 .github-link {
-    font-size: 1.2em;
+    font-size: 2em; /* Increased icon size */
 }
