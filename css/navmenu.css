@@ -150,3 +150,35 @@
 .name-red {
     color: red;
 }
+
+/* Existing styles */
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .burger {
+        top: 15px;
+        right: 20px;
+    }
+
+    .header-container {
+        padding: 5px 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .name-link {
+        top: 15px;
+        left: 15px;
+    }
+
+    .name-white, .name-red {
+        font-size: 1rem;
+    }
+}
+
