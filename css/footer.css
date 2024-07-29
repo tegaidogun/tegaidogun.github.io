@@ -1,0 +1,77 @@
+.footer {
+    background-color: white; /* Set background color to white */
+    color: #1e3c72; /* Set text color to a darker blue */
+    padding: 60px 40px; /* Increase padding for more space and move it up */
+    width: 100vw;
+    height: 100vh; /* Make footer take up a larger portion of the viewport */
+    text-align: left;
+    font-family: 'Arial', sans-serif; /* Ensure consistent font */
+    position: relative;
+    z-index: 1; /* Ensure footer is above particles */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+}
+
+.footer .footer-container {
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    width: 100%; /* Ensure full width */
+}
+
+.footer-section {
+    margin: 20px;
+    flex: 1;
+    min-width: 20px; /* Ensure sections have more space */
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: red; /* Red for headers */
+}
+
+.footer-section a {
+    color: #2a5298; /* Slightly lighter blue for links */
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #666;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Add space above the footer bottom */
+    width: 100%; /* Ensure full width */
+}
+
+.footer-copyright {
+    margin: 0;
+    flex: 1;
+    text-align: left; /* Left justify the copyright text */
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: flex-end; /* Align socials to the right */
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    color: #2a5298; /* Slightly lighter blue for social links */
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
