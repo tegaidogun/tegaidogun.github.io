@@ -1,7 +1,6 @@
 .burger-wrapper {
     width: 100%;
     position: relative;
-    overflow: hidden; /* Prevents overflow */
 }
 
 .burger {

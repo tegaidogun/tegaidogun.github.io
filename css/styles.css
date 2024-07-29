@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,10 +129,6 @@ body, html {
         gap: 20px;
         margin-top: 20px;
     }
-
-    #fullpage {
-        overflow: auto !important; /* Ensure natural scrolling */
-    }
 }
 
 /* Tablet styles */
@@ -171,7 +166,4 @@ body, html {
         margin-top: 20px;
     }
 
-    #fullpage {
-        overflow: auto !important; /* Ensure natural scrolling */
-    }
 }

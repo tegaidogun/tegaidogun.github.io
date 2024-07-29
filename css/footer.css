@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center the content vertically */
-    overflow-x: hidden;
 }
 
 .footer .footer-container {
