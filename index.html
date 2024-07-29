@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Furore&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="navmenu"></div>
     <div id="fullpage">
@@ -20,7 +22,8 @@
                     <img src="images/photo.jpg" alt="Profile Photo" class="profile-photo">
                     <div class="intro-text">
                         <h1 class="title">Computer Scientist</h1>
-                        <p class="statement">I like to craft solid and scalable frontend products with great user experiences.</p>
+                        <p class="statement">I like to craft solid and scalable frontend products with great user
+                            experiences.</p>
                         <div class="row">
                             <p>Highly skilled at progressive enhancement, design systems & UI Engineering.</p>
                             <p>Proven experience building successful products for clients across several countries.</p>
@@ -41,38 +44,14 @@
     <script src="js/footer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
     <script>
-        function initFullPage() {
-            if (window.innerWidth >= 900) {
-                new fullpage('#fullpage', {
-                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
-                    autoScrolling: true,
-                    scrollHorizontally: true,
-                    onLeave: changeBurgerColor,
-                });
-            } else {
-                new fullpage('#fullpage', {
-                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
-                    autoScrolling: false,
-                    fitToSection: false,
-                    fitToSectionDelay: 0,
-                    scrollHorizontally: true,
-                    normalScrollElements: '#fullpage',
-                    responsiveWidth: 900, // Disable fullpage.js below this width
-                    onLeave: changeBurgerColor,
-                    scrollOverflow: false, // Disable scroll overflow for smoother scrolling
-                });
-            }
-        }
-    
-        window.addEventListener('resize', function() {
-            if (window.fullpage_api) {
-                fullpage_api.destroy('all');
-                initFullPage();
-            }
+        new fullpage('#fullpage', {
+            licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
+            autoScrolling: true,
+            scrollHorizontally: true,
+            onLeave: changeBurgerColor,
         });
-    
-        initFullPage();
-    </script>    
-    
+    </script>
+
 </body>
+
 </html>
