@@ -54,27 +54,23 @@
                     onLeave: changeBurgerColor
                 });
             } else {
-                new fullpage('#fullpage', {
-                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
-                    autoScrolling: false,
-                    scrollHorizontally: true,
-                    fitToSection: false,
-                    touchSensitivity: 15,
-                    normalScrollElements: '#fullpage',
-                    onLeave: changeBurgerColor
-                });
+                document.getElementById('fullpage').style.overflow = 'auto';
             }
         }
     
         window.addEventListener('resize', function() {
             if (window.fullpage_api) {
-                fullpage_api.destroy('all');
-                initFullPage();
+                if (window.innerWidth < 900) {
+                    fullpage_api.destroy('all');
+                } else {
+                    initFullPage();
+                }
             }
         });
     
         initFullPage();
-    </script>      
+    </script>
+      
 </body>
 
 </html>
