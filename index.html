@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Furore&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div id="navmenu"></div>
     <div id="fullpage">
@@ -19,12 +17,10 @@
             <div id="particles-js"></div>
             <div class="content">
                 <div class="intro">
-                    <!-- Update the profile-photo class in the img tag -->
                     <img src="images/photo.jpg" alt="Profile Photo" class="profile-photo">
                     <div class="intro-text">
                         <h1 class="title">Computer Scientist</h1>
-                        <p class="statement">I like to craft solid and scalable frontend products with great user
-                            experiences.</p>
+                        <p class="statement">I like to craft solid and scalable frontend products with great user experiences.</p>
                         <div class="row">
                             <p>Highly skilled at progressive enhancement, design systems & UI Engineering.</p>
                             <p>Proven experience building successful products for clients across several countries.</p>
@@ -65,16 +61,15 @@
                 });
             }
         }
-    
+
         window.addEventListener('resize', function() {
             if (window.fullpage_api) {
                 fullpage_api.destroy('all');
                 initFullPage();
             }
         });
-    
-        initFullPage();
-    </script>      
-</body>
 
+        initFullPage();
+    </script>
+</body>
 </html>

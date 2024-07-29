@@ -1,7 +1,6 @@
 .footer {
     background-color: white; /* Set background color to white */
     color: #1e3c72; /* Set text color to a darker blue */
-    padding: 60px 40px; /* Increase padding for more space and move it up */
     width: 100vw;
     height: 100vh; /* Make footer take up a larger portion of the viewport */
     text-align: left;
@@ -11,6 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center the content vertically */
+    overflow-x: hidden;
 }
 
 .footer .footer-container {
@@ -165,3 +165,4 @@
         font-size: 1.2rem;
     }
 }
+

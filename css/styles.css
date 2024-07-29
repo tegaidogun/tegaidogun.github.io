@@ -82,7 +82,18 @@ p {
     text-align: left;
 }
 
-/* Existing styles */
+/* Prevent overflow 
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+} */
+
+#fullpage {
+    overflow: hidden;
+    width: 100%;
+} 
 
 /* Mobile styles */
 @media only screen and (max-width: 600px) {
@@ -90,7 +101,7 @@ p {
         display: block;
         height: auto;
         padding: 10px;
-        overflow: auto;
+        overflow-x: hidden; /* Prevent horizontal overflow */
     }
     
     .intro {
