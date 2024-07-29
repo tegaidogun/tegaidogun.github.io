@@ -81,6 +81,11 @@ p {
     text-align: left;
 }
 
+.name-link .name-red {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+
 /* Existing styles */
 
 /* Prevent overflow */
