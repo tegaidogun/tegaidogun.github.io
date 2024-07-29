@@ -135,7 +135,7 @@ body, html {
 @media only screen and (min-width: 600px) and (max-width: 900px) {
     .intro {
         flex-direction: column;
-        padding: 0 50px;
+        padding: 80px 20px;
     }
 
     .profile-photo {
