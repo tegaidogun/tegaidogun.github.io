@@ -47,29 +47,32 @@
                     licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
                     autoScrolling: true,
                     scrollHorizontally: true,
-                    onLeave: changeBurgerColor
+                    onLeave: changeBurgerColor,
                 });
             } else {
                 new fullpage('#fullpage', {
                     licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
                     autoScrolling: false,
-                    scrollHorizontally: true,
                     fitToSection: false,
-                    touchSensitivity: 15,
+                    scrollHorizontally: true,
                     normalScrollElements: '#fullpage',
-                    onLeave: changeBurgerColor
+                    touchSensitivity: 15,
+                    responsiveWidth: 900, // Disable fullpage.js below this width
+                    onLeave: changeBurgerColor,
+                    scrollOverflow: false, // Disable scroll overflow for smoother scrolling
                 });
             }
         }
-
+    
         window.addEventListener('resize', function() {
             if (window.fullpage_api) {
                 fullpage_api.destroy('all');
                 initFullPage();
             }
         });
-
+    
         initFullPage();
     </script>
+    
 </body>
 </html>

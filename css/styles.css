@@ -82,20 +82,24 @@ p {
     text-align: left;
 }
 
+/* Existing styles */
+
+/* Prevent overflow */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-} 
+}
 
+/* Ensure #fullpage fits within the viewport */
 #fullpage {
     overflow: hidden;
     width: 100%;
-} 
+}
 
 /* Mobile styles */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     body {
         display: block;
         height: auto;
@@ -135,6 +139,10 @@ body, html {
         gap: 20px;
         margin-top: 20px;
     }
+
+    #fullpage {
+        overflow: auto !important; /* Ensure natural scrolling */
+    }
 }
 
 /* Tablet styles */
@@ -170,5 +178,9 @@ body, html {
         flex-direction: column;
         gap: 20px;
         margin-top: 20px;
+    }
+
+    #fullpage {
+        overflow: auto !important; /* Ensure natural scrolling */
     }
 }
