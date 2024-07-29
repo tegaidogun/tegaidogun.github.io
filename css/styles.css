@@ -89,7 +89,6 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
 }
 
 /* Mobile styles */
@@ -97,7 +96,6 @@ body, html {
     body {
         display: block;
         height: auto;
-        overflow-x: hidden; /* Prevent horizontal overflow */
     }
     
     .intro {
