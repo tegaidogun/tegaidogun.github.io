@@ -43,7 +43,7 @@ p {
     align-items: center;
     justify-content: center;
     height: 70vh; /* Reduce height to move content higher */
-    padding: 0 100px; /* Increase padding for spacing */
+    padding: 100px 100px; /* Increase padding for spacing */
 }
 
 .profile-photo {
@@ -103,13 +103,12 @@ body, html {
     body {
         display: block;
         height: auto;
-        padding: 10px;
         overflow-x: hidden; /* Prevent horizontal overflow */
     }
     
     .intro {
         flex-direction: column;
-        padding: 0 20px;
+        padding: 80px 20px;
     }
 
     .profile-photo {
