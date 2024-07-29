@@ -99,8 +99,8 @@ p {
     }
 
     .profile-photo {
-        width: 100%;
-        max-width: 300px; /* Ensure the image does not get too large */
+        width: 80%;
+        max-width: 250px; /* Ensure the image does not get too large */
         height: auto;
         margin: 0 auto 20px auto; /* Center the image */
     }

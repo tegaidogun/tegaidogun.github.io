@@ -45,13 +45,36 @@
     <script src="js/footer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
     <script>
-        new fullpage('#fullpage', {
-            licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
-            autoScrolling: true,
-            scrollHorizontally: true,
-            onLeave: changeBurgerColor
+        function initFullPage() {
+            if (window.innerWidth >= 900) {
+                new fullpage('#fullpage', {
+                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
+                    autoScrolling: true,
+                    scrollHorizontally: true,
+                    onLeave: changeBurgerColor
+                });
+            } else {
+                new fullpage('#fullpage', {
+                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
+                    autoScrolling: false,
+                    scrollHorizontally: true,
+                    fitToSection: false,
+                    touchSensitivity: 15,
+                    normalScrollElements: '#fullpage',
+                    onLeave: changeBurgerColor
+                });
+            }
+        }
+    
+        window.addEventListener('resize', function() {
+            if (window.fullpage_api) {
+                fullpage_api.destroy('all');
+                initFullPage();
+            }
         });
-    </script>
+    
+        initFullPage();
+    </script>      
 </body>
 
 </html>
