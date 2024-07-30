@@ -95,6 +95,8 @@ p {
     padding: 100px 20px;
     background-color: white;
     color: #333333;
+    position: relative;
+    z-index: 1; 
 }
 
 .projects-experience-container {
@@ -153,10 +155,10 @@ p {
 }
 
 .divider {
-    width: 7px;
+    width: 2px;
     background-color: #ccc;
-    height: auto;
-    position: absolute;
+    height: 100%;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -170,6 +172,8 @@ p {
     min-height: 100vh;
     background-color: #ffffff; /* Example background color */
     box-sizing: border-box;
+    position: relative;
+    z-index: 1; 
 }
 .academic-works-container {
     position: relative;
@@ -321,6 +325,7 @@ body, html {
     }
 
     .academic-works-container {
+        position:relative;
         flex-direction: column;
         text-align: center;
         padding: 0 20px;
