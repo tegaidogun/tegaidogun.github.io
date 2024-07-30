@@ -1,0 +1,955 @@
+footer.css:
+.footer {
+    background-color: white; /* Set background color to white */
+    color: #1e3c72; /* Set text color to a darker blue */
+    width: 100vw;
+    height: 100vh; /* Make footer take up a larger portion of the viewport */
+    text-align: left;
+    font-family: 'Arial', sans-serif; /* Ensure consistent font */
+    position: relative;
+    z-index: 1; /* Ensure footer is above particles */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+}
+
+.footer .footer-container {
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    width: 100%; /* Ensure full width */
+}
+
+.footer-section {
+    margin: 20px;
+    flex: 1;
+    min-width: 20px; /* Ensure sections have more space */
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: red; /* Red for headers */
+}
+
+.footer-section a {
+    color: #2a5298; /* Slightly lighter blue for links */
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #666;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Add space above the footer bottom */
+    width: 100%; /* Ensure full width */
+}
+
+.footer-copyright {
+    margin: 0;
+    flex: 1;
+    text-align: left; /* Left justify the copyright text */
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: flex-end; /* Align socials to the right */
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    color: #2a5298; /* Slightly lighter blue for social links */
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-container {
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .footer-socials {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .footer-socials a {
+        margin: 0 10px;
+    }
+
+    .footer-section h4 {
+        font-size: 1.2rem;
+    }
+
+    .footer-section a {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .footer-container {
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .footer-socials {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .footer-socials a {
+        margin: 0 10px;
+    }
+
+    .footer-section h4 {
+        font-size: 1.5rem;
+    }
+
+    .footer-section a {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+navmenu.css:
+.burger-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.burger {
+    position: fixed;
+    top: 2%;
+    right: 2%; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.3s ease-in-out;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.burger-open .bar:nth-of-type(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-open .bar:nth-of-type(2) {
+    opacity: 0;
+}
+
+.burger-open .bar:nth-of-type(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #7a90b7;
+    clip-path: circle(0px at 100% 0%);
+    transition: clip-path 0.5s ease;
+    z-index: 2;
+}
+
+.navbar.nav-open {
+    clip-path: circle(150% at 100% 0%);
+}
+
+.nav-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-links li {
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+    margin: 20px 0;
+}
+
+.nav-links li.nav-link-open {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2a5298;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links a::before,
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background-color: #2a5298;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-links a::before {
+    top: 0;
+    left: 0;
+}
+
+.nav-links a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+@font-face {
+    font-family: 'Furore';
+    src: url('../fonts/Furore.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.logo {
+    font-family: 'Furore', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.name-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 25px;
+}
+
+.name-white {
+    color: white;
+}
+
+.name-red {
+    color: red;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .burger {
+        top: 15px;
+        right: 20px;
+    }
+
+    .header-container {
+        padding: 5px 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .name-link {
+        top: 15px;
+        left: 15px;
+    }
+
+    .name-white, .name-red {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+styles.css:
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1e3c72 0%, #2a5298 100%);
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Reduce height to move content higher */
+    padding: 100px 100px; /* Increase padding for spacing */
+}
+
+.profile-photo {
+    width: 450px; /* Adjust the photo size */
+    height: auto;
+    margin-right: 100px;
+}
+
+.intro-text {
+    max-width: 700px; /* Adjust the width */
+    text-align: left;
+}
+
+.intro-text .title {
+    font-family: 'Furore', sans-serif;
+    font-size: 5rem; /* Keep the title size the same */
+    color: red; /* Keep color red */
+    margin: 0;
+}
+
+.intro-text .statement {
+    font-size: 1.5rem; /* Keep the statement size as before */
+    margin: 30px 0; /* Adjust spacing */
+}
+
+.intro-text .row {
+    display: flex;
+    gap: 40px; /* Increase gap for spacing */
+    margin-top: 20px;
+}
+
+.intro-text .row .description {
+    flex: 1;
+    font-size: 1.2rem; /* Adjust the text size back */
+    margin: 0;
+    text-align: left;
+}
+
+.name-link .name-red {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.test {
+    background-color: white; /* Set background color to white */
+    width: 100%;
+    height: 100%;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 900px) {
+    body {
+        display: block;
+        height: auto;
+    }
+    
+    .intro {
+        flex-direction: column;
+        padding: 200px 20px;
+    }
+
+    .profile-photo {
+        width: 80%;
+        max-width: 250px; /* Ensure the image does not get too large */
+        height: auto;
+        margin: 0 auto 20px auto; /* Center the image */
+    }
+
+    .intro-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .intro-text .title {
+        font-size: 2.5rem;
+        word-wrap: break-word;
+    }
+
+    .intro-text .statement,
+    .intro-text .row p {
+        font-size: 1.2rem;
+    }
+
+    .intro-text .row {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .intro {
+        flex-direction: column;
+        padding: 80px 20px;
+    }
+
+    .profile-photo {
+        width: 60%;
+        max-width: 400px; /* Ensure the image does not get too large */
+        height: auto;
+        margin: 0 auto 20px auto; /* Center the image */
+    }
+
+    .intro-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .intro-text .title {
+        font-size: 3rem;
+        word-wrap: break-word;
+    }
+
+    .intro-text .statement,
+    .intro-text .row p {
+        font-size: 1.3rem;
+    }
+
+    .intro-text .row {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+}
+
+
+
+
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tega Idogun - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navmenu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Furore&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navmenu"></div>
+    <div id="fullpage">
+        <div class="section">
+            <div id="particles-js"></div>
+            <div class="content">
+                <div class="intro">
+                    <img src="images/photo.jpg" alt="Profile Photo" class="profile-photo">
+                    <div class="intro-text">
+                        <h1 class="title">Computer Scientist</h1>
+                        <p class="statement">I like to craft solid and scalable frontend products with great user
+                            experiences.</p>
+                        <div class="row">
+                            <p>Highly skilled at progressive enhancement, design systems & UI Engineering.</p>
+                            <p>Proven experience building successful products for clients across several countries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div id="footer"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/navmenu.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script>
+        function initFullPage() {
+            if (window.innerWidth >= 900) {
+                new fullpage('#fullpage', {
+                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
+                    autoScrolling: true,
+                    scrollHorizontally: true,
+                    onLeave: changeBurgerColor,
+                });
+            } else {
+                document.querySelector('body').style.overflowY = 'scroll'; // Enable normal scrolling for mobile devices
+            }
+        }
+    
+        window.addEventListener('resize', function() {
+            if (window.fullpage_api) {
+                fullpage_api.destroy('all');
+            }
+            initFullPage();
+        });
+    
+        initFullPage();
+    </script>
+    
+</body>
+
+</html>
+
+
+
+footer.js:
+fetch('pages/footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
+
+
+
+
+navmenu.js:
+function toggleMenu() {
+    const burger = document.querySelector('.burger');
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Toggle the nav-open and burger-open classes
+    const isMenuOpenBeforeToggle = navbar.classList.contains('nav-open');
+    burger.classList.toggle('burger-open');
+    navbar.classList.toggle('nav-open');
+
+    // Animation for nav links
+    navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = '';
+        } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        }
+    });
+
+    if (isMenuOpenBeforeToggle) {
+        // Menu was open and is now being closed, update burger color based on the current section
+        updateBurgerColorForSection();
+    } else {
+        // Menu is being opened, set the burger button color for the open state
+        updateBurgerColorForOpenMenu();
+    }
+}
+
+// Function to set a specific color for the burger button when the menu is open
+function updateBurgerColorForOpenMenu() {
+    const bars = document.querySelectorAll('.burger .bar');
+    const openMenuColor = '#2a5298'; // Set the desired color when menu is open
+
+    bars.forEach(bar => {
+        bar.style.backgroundColor = openMenuColor;
+    });
+}
+
+const sectionColors = {
+    0: 'white',
+    1: '#2a5298',
+    2: 'white',
+    3: '#2a5298',
+};
+
+// Function to update the burger color based on the current active section
+function updateBurgerColorForSection() {
+    const bars = document.querySelectorAll('.burger .bar');
+    const activeSection = document.querySelector('.fp-section.active');
+
+    if (activeSection) {
+        const sectionIndex = Array.from(activeSection.parentElement.children).indexOf(activeSection);
+        const color = sectionColors[sectionIndex] || 'initial';
+        bars.forEach(bar => {
+            bar.style.backgroundColor = color;
+        });
+    }
+}
+
+// Add the animation keyframes to the navmenu.css file
+const styleSheet = document.styleSheets[1];
+styleSheet.insertRule(`
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}`, styleSheet.cssRules.length);
+
+// Load navmenu
+fetch('pages/navmenu.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navmenu').innerHTML = data;
+    });
+
+function changeBurgerColor(origin, destination, direction) {
+    const bars = document.querySelectorAll('.burger .bar');
+    const navbar = document.querySelector('.navbar');
+
+    // Only change the color if the navbar is not open
+    if (!navbar.classList.contains('nav-open')) {
+        const color = sectionColors[destination.index] || 'initial';
+        bars.forEach(bar => {
+            bar.style.backgroundColor = color;
+        });
+    }
+}
+
+
+
+
+particles-config.js:
+particlesJS('particles-js', {
+    "particles": {
+        "number": {
+            "value": 150,
+            "density": {
+                "enable": true,
+                "value_area": 1000
+            }
+        },
+        "color": {
+            "value": ["#ffffff", "#ff0000", "#00ff00", "#0000ff"]
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 6
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 0.8,
+            "random": true,
+            "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 5,
+            "random": true,
+            "anim": {
+                "enable": true,
+                "speed": 10,
+                "size_min": 0.1,
+                "sync": false
+            }
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 100,
+            "color": "#ffffff",
+            "opacity": 0.5,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "bubble"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "repulse"
+            },
+            "resize": true
+        },
+        "modes": {
+            "grab": {
+                "distance": 400,
+                "line_linked": {
+                    "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 200,
+                "size": 10,
+                "duration": 2,
+                "opacity": 1,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
+        }
+    },
+    "retina_detect": true
+});
+
+
+
+
+projects.js:
+
+
+
+
+blog.html:
+
+
+
+
+contact.html:
+
+
+
+
+footer.html:
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Come Say Hello!<span class="wave">👋</span></h4>
+                <p><a href="mailto:idogunoghenetega@gmail.com">idogunoghenetega@gmail.com</a></p>
+                <p><a href="https://tegaidogun.github.io" target="_blank">tegaidogun.github.io</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <p><a href="projects.html">My Work</a></p>
+                <p><a href="blogs.html">My Shelf</a></p>
+                <p><a href="#my-resume">My Résumé</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2024 Tega Idogun</p>
+            <div class="footer-socials">
+                <a href="https://github.com/tegaidogun" target="_blank">GH</a>
+                <a href="https://linkedin.com/in/oghentega-idogun" target="_blank">LN</a>
+                <a href="https://youtube.com/tegaidogun" target="_blank">YT</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+navmenu.html:
+<div class="header-container">
+    <header>
+        <div class="logo">
+            <a href="index.html" class="name-link">
+                <span class="name-white">OGHENE</span><span class="name-red">TEGA</span><span class="name-white">IDOGUN</span>
+            </a>
+        </div>
+        <div class="burger-wrapper">
+            <div class="burger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="index.html">Home</a></li>
+                <li class="nav-link"><a href="blog.html">Blog</a></li>
+                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-link"><a href="about.html">About</a></li>
+                <li class="nav-link"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+
+
+
+particles.html:
+
+
+
+
+projects.html:
+
+
+
+
+Directory structure:
+.
+├── assets
+│   └── resume.pdf
+├── css
+│   ├── footer.css
+│   ├── navmenu.css
+│   └── styles.css
+├── fonts
+│   └── Furore.otf
+├── images
+│   ├── favicon.ico
+│   └── photo.jpg
+├── index.html
+├── js
+│   ├── footer.js
+│   ├── navmenu.js
+│   ├── particles-config.js
+│   └── projects.js
+├── merged_contents.sh
+├── merged_contents.txt
+└── pages
+    ├── blog.html
+    ├── contact.html
+    ├── footer.html
+    ├── navmenu.html
+    ├── particles.html
+    └── projects.html
+
+6 directories, 20 files

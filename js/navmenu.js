@@ -36,15 +36,17 @@ function updateBurgerColorForOpenMenu() {
     });
 }
 
+const sectionColors = {
+    0: 'white',
+    1: '#2a5298',
+    2: 'white',
+    3: '#2a5298',
+};
+
 // Function to update the burger color based on the current active section
 function updateBurgerColorForSection() {
     const bars = document.querySelectorAll('.burger .bar');
     const activeSection = document.querySelector('.fp-section.active');
-    const sectionColors = {
-        0: 'white', // Default color for the first section
-        1: '#2a5298', // Color for the second section
-        // Add more sections and their colors here
-    };
 
     if (activeSection) {
         const sectionIndex = Array.from(activeSection.parentElement.children).indexOf(activeSection);
@@ -79,11 +81,6 @@ fetch('pages/navmenu.html')
 function changeBurgerColor(origin, destination, direction) {
     const bars = document.querySelectorAll('.burger .bar');
     const navbar = document.querySelector('.navbar');
-    const sectionColors = {
-        0: 'white', // Default color for the first section
-        1: '#2a5298', // Color for the second section
-        // Add more sections and their colors here
-    };
 
     // Only change the color if the navbar is not open
     if (!navbar.classList.contains('nav-open')) {
