@@ -73,7 +73,7 @@ styleSheet.insertRule(`
 }`, styleSheet.cssRules.length);
 
 // Load navmenu
-fetch('pages/navmenu.html')
+fetch('components/navmenu.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('navmenu').innerHTML = data;

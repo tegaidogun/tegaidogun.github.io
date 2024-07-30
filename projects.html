@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tega Idogun - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navmenu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Furore&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navmenu"></div>
+    <div id="fullpage">
+        <div class="section">
+            <div id="particles-js"></div>
+            <div class="content">
+                <div class="intro">
+                    <img src="images/photo.jpg" alt="Profile Photo" class="profile-photo">
+                    <div class="intro-text">
+                        <h1 class="title">Computer Scientist</h1>
+                        <p class="statement">I like to craft solid and scalable frontend products with great user
+                            experiences.</p>
+                        <div class="row">
+                            <p>Highly skilled at progressive enhancement, design systems & UI Engineering.</p>
+                            <p>Proven experience building successful products for clients across several countries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="academic-works">
+            <div class="content academic-works-container">
+                <div class="academic-text academic-column">
+                    <h2 class="academic-title">Over the years,</h2>
+                    <p class="academic-description">
+                        I have pursued my academic journey with a strong focus on [Your Field]. My research has spanned various topics, including [Research Topics]. I have completed several projects and published papers on subjects like [Subject 1], [Subject 2], and [Subject 3].
+                    </p>
+                    <p class="academic-description">
+                        During my studies, I developed a deep understanding of [Key Concepts], which has allowed me to contribute to [Related Work or Industry]. My thesis work on [Thesis Topic] explored [Key Findings], providing valuable insights into [Specific Area].
+                    </p>
+                    <p class="academic-description">
+                        Additionally, I have presented at conferences and worked on collaborative projects that aimed to [Objective]. These experiences have not only enhanced my knowledge but also equipped me with practical skills in [Skills or Tools].
+                    </p>
+                    <div class="fiu-kfscis-logo">
+                        <img src="images/fiu-kfscis.png" alt="Florida International University - Knight Foundation School of Computing and Information Sciences" class="placeholder-image">
+                    </div>
+                </div>
+                <div class="academic-image academic-column">
+                    <img src="images/graduation.jpg" alt="Academic Works Image" class="placeholder-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="tech-stacks">
+            <p class="academic-description">
+                This is my experience section.
+            </p>
+        </div>          
+
+        <div class="section" id="projects-experience">
+            <div class="content projects-experience-container">
+                <div class="project-column">
+                    <h2 class="project-title">I build & design stuff</h2>
+                    <p class="project-description">Open source projects, web apps and experimentals.</p>
+                    <a href="#" class="project-link">SEE MY WORK <span>&rarr;</span></a>
+                    <img src="images/photo.jpg" alt="Project Image" class="project-image">
+                </div>
+                <div class="divider"></div>
+                <div class="project-column">
+                    <img src="images/photo.jpg" alt="Writing Image" class="project-image">
+                    <h2 class="project-title">I write, sometimes</h2>
+                    <p class="project-description">About design, frontend dev, learning and life.</p>
+                    <a href="#" class="project-link">READ MY ARTICLES <span>&rarr;</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="tech-stacks">
+            <p class="academic-description">
+                This is my tech stack section.
+            </p>
+        </div>  
+        
+        <div class="section">
+            <div id="footer"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/navmenu.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script>
+        function initFullPage() {
+            if (window.innerWidth >= 900) {
+                new fullpage('#fullpage', {
+                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
+                    autoScrolling: true,
+                    scrollHorizontally: true,
+                    onLeave: changeBurgerColor,
+                });
+            } else {
+                document.querySelector('body').style.overflowY = 'scroll'; // Enable normal scrolling for mobile devices
+            }
+        }
+    
+        window.addEventListener('resize', function() {
+            if (window.fullpage_api) {
+                fullpage_api.destroy('all');
+            }
+            initFullPage();
+        });
+    
+        initFullPage();
+    </script>
+    
+</body>
+
+</html>
