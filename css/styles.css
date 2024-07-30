@@ -100,7 +100,7 @@ p {
 .projects-experience-container {
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 75%;
     width: 100%;
     margin: auto; /* Centering the container */
     position: relative;
@@ -153,7 +153,7 @@ p {
 }
 
 .divider {
-    width: 1px;
+    width: 7px;
     background-color: #ccc;
     height: auto;
     position: absolute;
@@ -163,11 +163,30 @@ p {
 
 /* Academic Works and About Me Section */
 #academic-works {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 100px 20px;
-    text-align: left;
-    color: #333333;
+    min-height: 100vh;
+    background-color: #ffffff; /* Example background color */
+    box-sizing: border-box;
 }
-
+.academic-works-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.academic-column {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
 #academic-works h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
@@ -194,6 +213,46 @@ p {
     font-size: 1.2rem;
     color: #333;
 }
+.academic-text {
+    flex: 1 1 50%;
+    max-width: 50%;
+    margin-right: 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.academic-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.academic-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.academic-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.fiu-kfscis-logo {
+    padding-top: 50px;
+}
+
+.placeholder-image {
+    max-width: 67.5%;
+    height: auto;
+    display: block;
+}
+
 
 body, html {
     margin: 0;
@@ -249,6 +308,7 @@ body, html {
     .projects-experience-container {
         flex-direction: column;
         align-items: center;
+        padding: 0 20px;
     }
 
     .divider {
@@ -259,7 +319,40 @@ body, html {
         display: inline-block;
         margin-left: 5px;
     }
+
+    .academic-works-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .academic-column {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0; /* Add spacing between text and image */
+    }
+
+    .academic-text,
+    .academic-image {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .academic-title,
+    .academic-description {
+        text-align: center;
+    }
+
+    .academic-text {
+        margin-bottom: 20px; /* Reduce margin for better fit */
+    }
+
+    .placeholder-image {
+        max-width: 100%;
+        height: auto;
+    }
 }
+
 
 /* Tablet styles */
 @media only screen and (min-width: 600px) and (max-width: 900px) {
