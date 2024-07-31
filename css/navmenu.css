@@ -168,6 +168,10 @@
         right: 20px;
     }
 
+    .bar {
+        background-color:red;
+    }
+
     .header-container {
         padding: 5px 10px;
     }
