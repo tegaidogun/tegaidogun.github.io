@@ -40,10 +40,11 @@ function updateBurgerColorForOpenMenu() {
 const pageSectionColors = {
     index: {
         0: '#ffffff',
-        1: '#2a5298',
+        1: 'red',
         2: '#ffffff',
-        3: '#2a5298',
+        3: 'red',
         4: '#ffffff',
+        5: 'red',
     },
     shelf: {
         0: '#f0f0f0',
@@ -51,7 +52,7 @@ const pageSectionColors = {
     },
     contact: {
         0: '#2a5298',
-        1: '#2a5298',
+        1: 'red',
     },
     // Add more pages as needed
 };

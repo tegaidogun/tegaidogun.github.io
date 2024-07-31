@@ -1,10 +1,19 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background: #202731;
+    background: radial-gradient(circle at center, #1e3c72 0%, #2a5298 100%);
     color: #ffffff;
     margin: 0;
     padding: 0;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
 #shelf {
@@ -14,12 +23,14 @@ body {
     position: relative;
     margin: auto;
     flex-direction: column;
+    z-index: 1;
 }
 
 .shelf-header h1 {
+    font-family: 'Furore', sans-serif;
     font-size: 3.5em;
     margin-bottom: 40px;
-    color:#fc300c;
+    color: #fc300c;
 }
 
 .shelf-header p {
@@ -31,21 +42,24 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Space between cards */
+    gap: 30px;
+    /* Space between cards */
 }
 
 .shelf-card {
     border-radius: 15px;
     padding: 20px;
     width: 400px;
-    height: 200px; /* Ensure cards are squarish */
+    height: 200px;
+    /* Ensure cards are squarish */
     transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: #ffffff;
-    border: 2px solid transparent; /* Transparent border for hover effect */
+    border: 2px solid transparent;
+    /* Transparent border for hover effect */
 }
 
 .shelf-card:hover {
@@ -77,15 +91,18 @@ body {
 
 /* Specific Colors for Cards */
 .medium-card {
-    background-color: #00ab6c; /* Medium Green */
+    background-color: #00ab6c;
+    /* Medium Green */
 }
 
 .hackernoon-card {
-    background-color: #02e41d; /* HackerNoon Bright Green */
+    background-color: #02e41d;
+    /* HackerNoon Bright Green */
 }
 
 .devto-card {
-    background-color: #333333; /* Dev.to Dark Grey */
+    background-color: #333333;
+    /* Dev.to Dark Grey */
 }
 
 /* Responsive Design */

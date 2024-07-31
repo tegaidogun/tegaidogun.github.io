@@ -82,10 +82,6 @@ p {
     text-align: left;
 }
 
-.name-link .name-red {
-    margin-right: 10px;
-}
-
 /* Projects and Experience Section */
 #projects-experience {
     display: flex;
