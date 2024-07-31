@@ -1,0 +1,109 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #9eb1d2;
+    color: #2a5298;
+    margin: 0;
+    padding: 0;
+}
+
+#contact {
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    margin: auto;
+    flex-direction: column;
+}
+
+.contact-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between cards */
+}
+
+.contact-card {
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    height: 200px; /* Ensure cards are squarish */
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    border: 2px solid transparent; /* Transparent border for hover effect */
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    border-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Specific Colors for Cards */
+.email-card {
+    background-color: #007bff; /* Vibrant Blue */
+}
+
+.github-card {
+    background-color: #6c757d; /* Gray */
+}
+
+.linkedin-card {
+    background-color: #0077b5; /* LinkedIn Blue */
+}
+
+.gitlab-card {
+    background-color: #e24329; /* GitLab Red */
+}
+
+.stackoverflow-card {
+    background-color: #ffc107; /* Stack Overflow Orange */
+    color: #000000; /* Text color */
+}
+
+.twitter-card {
+    background-color: #1da1f2; /* Twitter Blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}

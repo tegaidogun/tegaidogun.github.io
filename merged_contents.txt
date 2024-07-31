@@ -1,3 +1,130 @@
+footer.html:
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Come Say Hello!<span class="wave">👋</span></h4>
+                <p><a href="mailto:idogunoghenetega@gmail.com">idogunoghenetega@gmail.com</a></p>
+                <p><a href="https://tegaidogun.github.io" target="_blank">tegaidogun.github.io</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <p><a href="projects.html">My Work</a></p>
+                <p><a href="blogs.html">My Shelf</a></p>
+                <p><a href="#my-resume">My Résumé</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2024 Tega Idogun</p>
+            <div class="footer-socials">
+                <a href="https://github.com/tegaidogun" target="_blank">GH</a>
+                <a href="https://linkedin.com/in/oghentega-idogun" target="_blank">LN</a>
+                <a href="https://youtube.com/tegaidogun" target="_blank">YT</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+navmenu.html:
+<div class="header-container">
+    <header>
+        <div class="logo">
+            <a href="/" class="name-link">
+                <span class="name-white">OGHENE</span><span class="name-red">TEGA</span><span class="name-white">IDOGUN</span>
+            </a>
+        </div>
+        <div class="burger-wrapper">
+            <div class="burger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="/">Home</a></li>
+                <li class="nav-link"><a href="/projects.html">Projects</a></li>
+                <li class="nav-link"><a href="/experience.html">Experience</a></li>
+                <li class="nav-link"><a href="/shelf.html">Shelf</a></li>
+                <li class="nav-link"><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+
+
+
+contact.html:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tega Idogun - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navmenu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Furore&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navmenu"></div>
+    <div id="fullpage">
+        <div class="section">
+            <div id="particles-js"></div>
+            <div class="content">
+                
+            </div>
+        </div>
+        
+        <div class="section">
+            <div id="footer"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/navmenu.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script>
+        function initFullPage() {
+            if (window.innerWidth >= 900) {
+                new fullpage('#fullpage', {
+                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
+                    autoScrolling: true,
+                    scrollHorizontally: true,
+                    onLeave: changeBurgerColor,
+                });
+            } else {
+                document.querySelector('body').style.overflowY = 'scroll'; // Enable normal scrolling for mobile devices
+            }
+        }
+    
+        window.addEventListener('resize', function() {
+            if (window.fullpage_api) {
+                fullpage_api.destroy('all');
+            }
+            initFullPage();
+        });
+    
+        initFullPage();
+    </script>
+    
+</body>
+
+</html>
+
+
+
 footer.css:
 .footer {
     background-color: white; /* Set background color to white */
@@ -11,6 +138,46 @@ footer.css:
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center the content vertically */
+}
+
+.wave {
+    animation: wave-animation 2s infinite;
+    display: inline-block;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(14deg);
+    }
+
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    30% {
+        transform: rotate(14deg);
+    }
+
+    40% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .footer .footer-container {
@@ -366,7 +533,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height instead of height */
     background: radial-gradient(circle at center, #1e3c72 0%, #2a5298 100%);
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
@@ -376,7 +543,7 @@ body {
 }
 
 #particles-js {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -402,55 +569,222 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70vh; /* Reduce height to move content higher */
-    padding: 100px 100px; /* Increase padding for spacing */
+    min-height: 70vh; /* Use min-height instead of height */
+    padding: 100px 100px;
+    flex-wrap: wrap;
 }
 
 .profile-photo {
-    width: 450px; /* Adjust the photo size */
+    width: 450px;
     height: auto;
     margin-right: 100px;
 }
 
 .intro-text {
-    max-width: 700px; /* Adjust the width */
+    max-width: 700px;
     text-align: left;
 }
 
 .intro-text .title {
     font-family: 'Furore', sans-serif;
-    font-size: 5rem; /* Keep the title size the same */
-    color: red; /* Keep color red */
+    font-size: 5rem;
+    color: red;
     margin: 0;
 }
 
 .intro-text .statement {
-    font-size: 1.5rem; /* Keep the statement size as before */
-    margin: 30px 0; /* Adjust spacing */
+    font-size: 1.5rem;
+    margin: 30px 0;
 }
 
 .intro-text .row {
     display: flex;
-    gap: 40px; /* Increase gap for spacing */
+    gap: 40px;
     margin-top: 20px;
 }
 
 .intro-text .row .description {
     flex: 1;
-    font-size: 1.2rem; /* Adjust the text size back */
+    font-size: 1.2rem;
     margin: 0;
     text-align: left;
 }
 
 .name-link .name-red {
-    margin-right: 10px; /* Adjust as needed */
+    margin-right: 10px;
 }
 
-.test {
-    background-color: white; /* Set background color to white */
-    width: 100%;
-    height: 100%;
+/* Projects and Experience Section */
+#projects-experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 20px;
+    background-color: white;
+    color: #333333;
+    position: relative;
+    z-index: 1; 
 }
+
+.projects-experience-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 75%;
+    width: 100%;
+    margin: auto; /* Centering the container */
+    position: relative;
+}
+
+.project-column {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.project-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1e3c72;
+    margin-bottom: 20px;
+}
+
+.project-description {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.project-link {
+    font-size: 1.2rem;
+    color: #1e3c72;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.project-link:hover {
+    border-color: #1e3c72;
+}
+
+
+.project-link span {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.divider {
+    width: 2px;
+    background-color: #ccc;
+    height: 100%;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Academic Works and About Me Section */
+#academic-works {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    min-height: 100vh;
+    background-color: #ffffff; /* Example background color */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; 
+}
+.academic-works-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.academic-column {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+#academic-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.academic-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.academic-content p,
+.academic-content ul {
+    margin-bottom: 20px;
+}
+
+.academic-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.academic-content li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+.academic-text {
+    flex: 1 1 50%;
+    max-width: 50%;
+    margin-right: 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.academic-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.academic-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.academic-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.fiu-kfscis-logo {
+    padding-top: 50px;
+}
+
+.placeholder-image {
+    max-width: 67.5%;
+    height: auto;
+    display: block;
+}
+
 
 body, html {
     margin: 0;
@@ -464,7 +798,7 @@ body, html {
         display: block;
         height: auto;
     }
-    
+
     .intro {
         flex-direction: column;
         padding: 200px 20px;
@@ -472,9 +806,9 @@ body, html {
 
     .profile-photo {
         width: 80%;
-        max-width: 250px; /* Ensure the image does not get too large */
+        max-width: 250px;
         height: auto;
-        margin: 0 auto 20px auto; /* Center the image */
+        margin: 0 auto 20px auto;
     }
 
     .intro-text {
@@ -497,7 +831,61 @@ body, html {
         gap: 20px;
         margin-top: 20px;
     }
+
+    .project-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .projects-experience-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .project-link span {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .academic-works-container {
+        position:relative;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .academic-column {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0; /* Add spacing between text and image */
+    }
+
+    .academic-text,
+    .academic-image {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .academic-title,
+    .academic-description {
+        text-align: center;
+    }
+
+    .academic-text {
+        margin-bottom: 20px; /* Reduce margin for better fit */
+    }
+
+    .placeholder-image {
+        max-width: 100%;
+        height: auto;
+    }
 }
+
 
 /* Tablet styles */
 @media only screen and (min-width: 600px) and (max-width: 900px) {
@@ -508,9 +896,9 @@ body, html {
 
     .profile-photo {
         width: 60%;
-        max-width: 400px; /* Ensure the image does not get too large */
+        max-width: 400px;
         height: auto;
-        margin: 0 auto 20px auto; /* Center the image */
+        margin: 0 auto 20px auto;
     }
 
     .intro-text {
@@ -533,8 +921,12 @@ body, html {
         gap: 20px;
         margin-top: 20px;
     }
-
 }
+
+
+
+
+experience.html:
 
 
 
@@ -575,6 +967,60 @@ index.html:
                 </div>
             </div>
         </div>
+
+        <div class="section" id="academic-works">
+            <div class="content academic-works-container">
+                <div class="academic-text academic-column">
+                    <h2 class="academic-title">Over the years,</h2>
+                    <p class="academic-description">
+                        I have pursued my academic journey with a strong focus on [Your Field]. My research has spanned various topics, including [Research Topics]. I have completed several projects and published papers on subjects like [Subject 1], [Subject 2], and [Subject 3].
+                    </p>
+                    <p class="academic-description">
+                        During my studies, I developed a deep understanding of [Key Concepts], which has allowed me to contribute to [Related Work or Industry]. My thesis work on [Thesis Topic] explored [Key Findings], providing valuable insights into [Specific Area].
+                    </p>
+                    <p class="academic-description">
+                        Additionally, I have presented at conferences and worked on collaborative projects that aimed to [Objective]. These experiences have not only enhanced my knowledge but also equipped me with practical skills in [Skills or Tools].
+                    </p>
+                    <div class="fiu-kfscis-logo">
+                        <img src="images/fiu-kfscis.png" alt="Florida International University - Knight Foundation School of Computing and Information Sciences" class="placeholder-image">
+                    </div>
+                </div>
+                <div class="academic-image academic-column">
+                    <img src="images/graduation.jpg" alt="Academic Works Image" class="placeholder-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="tech-stacks">
+            <p class="academic-description">
+                This is my experience section.
+            </p>
+        </div>          
+
+        <div class="section" id="projects-experience">
+            <div class="content projects-experience-container">
+                <div class="project-column">
+                    <h2 class="project-title">I build & design stuff</h2>
+                    <p class="project-description">Open source projects, web apps and experimentals.</p>
+                    <a href="#" class="project-link">SEE MY WORK <span>&rarr;</span></a>
+                    <img src="images/photo.jpg" alt="Project Image" class="project-image">
+                </div>
+                <div class="divider"></div>
+                <div class="project-column">
+                    <img src="images/photo.jpg" alt="Writing Image" class="project-image">
+                    <h2 class="project-title">I write, sometimes</h2>
+                    <p class="project-description">About design, frontend dev, learning and life.</p>
+                    <a href="#" class="project-link">READ MY ARTICLES <span>&rarr;</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="tech-stacks">
+            <p class="academic-description">
+                This is my tech stack section.
+            </p>
+        </div>  
+        
         <div class="section">
             <div id="footer"></div>
         </div>
@@ -617,7 +1063,7 @@ index.html:
 
 
 footer.js:
-fetch('pages/footer.html')
+fetch('components/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer').innerHTML = data;
@@ -666,10 +1112,11 @@ function updateBurgerColorForOpenMenu() {
 }
 
 const sectionColors = {
-    0: 'white',
+    0: '#ffffff',
     1: '#2a5298',
-    2: 'white',
+    2: '#ffffff',
     3: '#2a5298',
+    4: '#ffffff',
 };
 
 // Function to update the burger color based on the current active section
@@ -701,7 +1148,7 @@ styleSheet.insertRule(`
 }`, styleSheet.cssRules.length);
 
 // Load navmenu
-fetch('pages/navmenu.html')
+fetch('components/navmenu.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('navmenu').innerHTML = data;
@@ -843,82 +1290,138 @@ projects.js:
 
 
 
-blog.html:
+projects.html:
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tega Idogun - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navmenu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Furore&display=swap" rel="stylesheet">
+</head>
 
-
-
-contact.html:
-
-
-
-
-footer.html:
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Come Say Hello!<span class="wave">👋</span></h4>
-                <p><a href="mailto:idogunoghenetega@gmail.com">idogunoghenetega@gmail.com</a></p>
-                <p><a href="https://tegaidogun.github.io" target="_blank">tegaidogun.github.io</a></p>
-            </div>
-            <div class="footer-section">
-                <h4>Links</h4>
-                <p><a href="projects.html">My Work</a></p>
-                <p><a href="blogs.html">My Shelf</a></p>
-                <p><a href="#my-resume">My Résumé</a></p>
+<body>
+    <div id="navmenu"></div>
+    <div id="fullpage">
+        <div class="section">
+            <div id="particles-js"></div>
+            <div class="content">
+                <div class="intro">
+                    <img src="images/photo.jpg" alt="Profile Photo" class="profile-photo">
+                    <div class="intro-text">
+                        <h1 class="title">Computer Scientist</h1>
+                        <p class="statement">I like to craft solid and scalable frontend products with great user
+                            experiences.</p>
+                        <div class="row">
+                            <p>Highly skilled at progressive enhancement, design systems & UI Engineering.</p>
+                            <p>Proven experience building successful products for clients across several countries.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p class="footer-copyright">&copy; 2024 Tega Idogun</p>
-            <div class="footer-socials">
-                <a href="https://github.com/tegaidogun" target="_blank">GH</a>
-                <a href="https://linkedin.com/in/oghentega-idogun" target="_blank">LN</a>
-                <a href="https://youtube.com/tegaidogun" target="_blank">YT</a>
+
+        <div class="section" id="academic-works">
+            <div class="content academic-works-container">
+                <div class="academic-text academic-column">
+                    <h2 class="academic-title">Over the years,</h2>
+                    <p class="academic-description">
+                        I have pursued my academic journey with a strong focus on [Your Field]. My research has spanned various topics, including [Research Topics]. I have completed several projects and published papers on subjects like [Subject 1], [Subject 2], and [Subject 3].
+                    </p>
+                    <p class="academic-description">
+                        During my studies, I developed a deep understanding of [Key Concepts], which has allowed me to contribute to [Related Work or Industry]. My thesis work on [Thesis Topic] explored [Key Findings], providing valuable insights into [Specific Area].
+                    </p>
+                    <p class="academic-description">
+                        Additionally, I have presented at conferences and worked on collaborative projects that aimed to [Objective]. These experiences have not only enhanced my knowledge but also equipped me with practical skills in [Skills or Tools].
+                    </p>
+                    <div class="fiu-kfscis-logo">
+                        <img src="images/fiu-kfscis.png" alt="Florida International University - Knight Foundation School of Computing and Information Sciences" class="placeholder-image">
+                    </div>
+                </div>
+                <div class="academic-image academic-column">
+                    <img src="images/graduation.jpg" alt="Academic Works Image" class="placeholder-image">
+                </div>
             </div>
+        </div>
+
+        <div class="section" id="tech-stacks">
+            <p class="academic-description">
+                This is my experience section.
+            </p>
+        </div>          
+
+        <div class="section" id="projects-experience">
+            <div class="content projects-experience-container">
+                <div class="project-column">
+                    <h2 class="project-title">I build & design stuff</h2>
+                    <p class="project-description">Open source projects, web apps and experimentals.</p>
+                    <a href="#" class="project-link">SEE MY WORK <span>&rarr;</span></a>
+                    <img src="images/photo.jpg" alt="Project Image" class="project-image">
+                </div>
+                <div class="divider"></div>
+                <div class="project-column">
+                    <img src="images/photo.jpg" alt="Writing Image" class="project-image">
+                    <h2 class="project-title">I write, sometimes</h2>
+                    <p class="project-description">About design, frontend dev, learning and life.</p>
+                    <a href="#" class="project-link">READ MY ARTICLES <span>&rarr;</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="tech-stacks">
+            <p class="academic-description">
+                This is my tech stack section.
+            </p>
+        </div>  
+        
+        <div class="section">
+            <div id="footer"></div>
         </div>
     </div>
-</footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/navmenu.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script>
+        function initFullPage() {
+            if (window.innerWidth >= 900) {
+                new fullpage('#fullpage', {
+                    licenseKey: 'YOUR_KEY_HERE', // Replace with your actual license key
+                    autoScrolling: true,
+                    scrollHorizontally: true,
+                    onLeave: changeBurgerColor,
+                });
+            } else {
+                document.querySelector('body').style.overflowY = 'scroll'; // Enable normal scrolling for mobile devices
+            }
+        }
+    
+        window.addEventListener('resize', function() {
+            if (window.fullpage_api) {
+                fullpage_api.destroy('all');
+            }
+            initFullPage();
+        });
+    
+        initFullPage();
+    </script>
+    
+</body>
+
+</html>
 
 
 
-
-navmenu.html:
-<div class="header-container">
-    <header>
-        <div class="logo">
-            <a href="index.html" class="name-link">
-                <span class="name-white">OGHENE</span><span class="name-red">TEGA</span><span class="name-white">IDOGUN</span>
-            </a>
-        </div>
-        <div class="burger-wrapper">
-            <div class="burger" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li class="nav-link"><a href="index.html">Home</a></li>
-                <li class="nav-link"><a href="blog.html">Blog</a></li>
-                <li class="nav-link"><a href="gallery.html">Gallery</a></li>
-                <li class="nav-link"><a href="about.html">About</a></li>
-                <li class="nav-link"><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-</div>
-
-
-
-
-particles.html:
-
-
-
-
-projects.html:
+shelf.html:
 
 
 
@@ -927,14 +1430,21 @@ Directory structure:
 .
 ├── assets
 │   └── resume.pdf
+├── components
+│   ├── footer.html
+│   └── navmenu.html
+├── contact.html
 ├── css
 │   ├── footer.css
 │   ├── navmenu.css
 │   └── styles.css
+├── experience.html
 ├── fonts
 │   └── Furore.otf
 ├── images
 │   ├── favicon.ico
+│   ├── fiu-kfscis.png
+│   ├── graduation.jpg
 │   └── photo.jpg
 ├── index.html
 ├── js
@@ -944,12 +1454,7 @@ Directory structure:
 │   └── projects.js
 ├── merged_contents.sh
 ├── merged_contents.txt
-└── pages
-    ├── blog.html
-    ├── contact.html
-    ├── footer.html
-    ├── navmenu.html
-    ├── particles.html
-    └── projects.html
+├── projects.html
+└── shelf.html
 
-6 directories, 20 files
+6 directories, 22 files

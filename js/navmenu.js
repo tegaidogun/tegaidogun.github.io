@@ -36,13 +36,40 @@ function updateBurgerColorForOpenMenu() {
     });
 }
 
-const sectionColors = {
-    0: '#ffffff',
-    1: '#2a5298',
-    2: '#ffffff',
-    3: '#2a5298',
-    4: '#ffffff',
+// Define section colors for different pages
+const pageSectionColors = {
+    index: {
+        0: '#ffffff',
+        1: '#2a5298',
+        2: '#ffffff',
+        3: '#2a5298',
+        4: '#ffffff',
+    },
+    shelf: {
+        0: '#f0f0f0',
+        1: 'red',
+    },
+    contact: {
+        0: '#2a5298',
+        1: '#2a5298',
+    },
+    // Add more pages as needed
 };
+
+// Extract the current page name from the URL
+function getPageName() {
+    const path = window.location.pathname;
+    const page = path.substring(path.lastIndexOf('/') + 1);
+    if (!page.split('.')[0]) {
+        return "index";
+    } else {
+        return page.split('.')[0]; // Return the page name without extension
+    }
+}
+
+// Get the section colors for the current page
+const currentPage = getPageName();
+const sectionColors = pageSectionColors[currentPage] || {};
 
 // Function to update the burger color based on the current active section
 function updateBurgerColorForSection() {
