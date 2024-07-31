@@ -22,6 +22,11 @@ body {
     color:#fc300c;
 }
 
+.shelf-header p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
 .shelf-cards {
     display: flex;
     flex-wrap: wrap;
