@@ -70,7 +70,7 @@ p {
 }
 
 .intro-text .row {
-    color: rgb(0, 255, 0);
+    color: white;
     display: flex;
     gap: 40px;
     margin-top: 20px;
