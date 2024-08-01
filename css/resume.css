@@ -45,11 +45,11 @@ body, html {
     overflow-y: auto; /* Allow vertical scrolling */
     display: flex;
     justify-content: center;
+    align-items: center; /* Center canvas vertically */
 }
 
 canvas {
     border: none;
     display: block;
-    margin: 20px 0; /* Space above and below the canvas */
+    margin: 0; /* Remove margin */
 }
-
