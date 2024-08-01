@@ -46,6 +46,10 @@ const pageSectionColors = {
         4: '#ffffff',
         5: 'red',
     },
+    projects: {
+        0: '#2a5298',
+        1: 'red',
+    },
     shelf: {
         0: '#f0f0f0',
         1: 'red',

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Tega Idogun</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/navmenu.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="navmenu"></div>
+    <div id="fullpage">
+        <div class="section">
+            <div id="particles-js"></div>
+            <div id="projects" class="container">
+                <div class="projects-header"><h1>Projects</h1></div>
+            </div>
+        </div>
+        <div class="section">
+            <div id="footer"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/navmenu.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script>
+        function initFullPage() {
+            if (window.innerWidth >= 900) {
+                new fullpage('#fullpage', {
+                    licenseKey: 'YOUR_KEY_HERE',
+                    autoScrolling: true,
+                    scrollHorizontally: true,
+                    onLeave: changeBurgerColor,
+                });
+            } else {
+                document.querySelector('body').style.overflowY = 'scroll';
+            }
+        }
+    
+        window.addEventListener('resize', function() {
+            if (window.fullpage_api) {
+                fullpage_api.destroy('all');
+            }
+            initFullPage();
+        });
+    
+        initFullPage();
+    </script>
+</body>
+</html>

@@ -47,7 +47,7 @@ navmenu.html:
             <ul class="nav-links">
                 <li class="nav-link"><a href="/">Home</a></li>
                 <li class="nav-link"><a href="/projects.html">Projects</a></li>
-                <li class="nav-link"><a href="/experience.html">Experience</a></li>
+                <li class="nav-link"><a href="/resume.html">Resume</a></li>
                 <li class="nav-link"><a href="/shelf.html">Shelf</a></li>
                 <li class="nav-link"><a href="/contact.html">Contact</a></li>
             </ul>
@@ -61,39 +61,78 @@ navmenu.html:
 contact.html:
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tega Idogun - Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Contact Me - Tega Idogun</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/navmenu.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Furore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <div id="navmenu"></div>
     <div id="fullpage">
         <div class="section">
             <div id="particles-js"></div>
-            <div class="content">
-                
+            <div id="contact" class="container">
+                <div class="contact-header">
+                    <h1>Contact Me</h1>
+                </div>
+                <div class="contact-cards">
+                    <div class="contact-card email-card">
+                        <a href="mailto:otegaid@gmail.com" class="card-link">
+                            <i class="fas fa-envelope card-icon"></i>
+                            <span class="card-title">Email</span>
+                        </a>
+                    </div>
+                    <div class="contact-card github-card">
+                        <a href="https://github.com/tegaidogun" class="card-link" target="_blank">
+                            <i class="fab fa-github card-icon"></i>
+                            <span class="card-title">GitHub</span>
+                        </a>
+                    </div>
+                    <div class="contact-card linkedin-card">
+                        <a href="https://linkedin.com/in/tegaidogun" class="card-link" target="_blank">
+                            <i class="fab fa-linkedin card-icon"></i>
+                            <span class="card-title">LinkedIn</span>
+                        </a>
+                    </div>
+                    <div class="contact-card gitlab-card">
+                        <a href="https://gitlab.com/tegaidogun" class="card-link" target="_blank">
+                            <i class="fab fa-gitlab card-icon"></i>
+                            <span class="card-title">GitLab</span>
+                        </a>
+                    </div>
+                    <div class="contact-card stackoverflow-card">
+                        <a href="https://stackoverflow.com/users/tegaidogun" class="card-link" target="_blank">
+                            <i class="fab fa-stack-overflow card-icon"></i>
+                            <span class="card-title">Stack Overflow</span>
+                        </a>
+                    </div>
+                    <div class="contact-card twitter-card">
+                        <a href="https://twitter.com/tegaidogun" class="card-link" target="_blank">
+                            <i class="fab fa-twitter card-icon"></i>
+                            <span class="card-title">Twitter</span>
+                        </a>
+                    </div>
+                    
+                    
+                </div>
             </div>
         </div>
-        
         <div class="section">
             <div id="footer"></div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/particles-config.js"></script>
+    <script src="js/particles-config-contact.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="js/navmenu.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/contact.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
     <script>
         function initFullPage() {
@@ -118,10 +157,141 @@ contact.html:
     
         initFullPage();
     </script>
-    
 </body>
-
 </html>
+
+
+
+
+contact.css:
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #ffffff;
+    color: #2a5298;
+    margin: 0;
+    padding: 0;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.name-white {
+    color: #2a5298;
+}
+
+.bar {
+    background-color: #2a5298;
+}
+
+#contact {
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    margin: auto;
+    flex-direction: column;
+}
+
+.contact-header h1 {
+    font-family: 'Furore', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between cards */
+}
+
+.contact-card {
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    height: 200px; /* Ensure cards are squarish */
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    border: 2px solid transparent; /* Transparent border for hover effect */
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    border-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Specific Colors for Cards */
+.email-card {
+    background-color: #007bff; /* Vibrant Blue */
+}
+
+.github-card {
+    background-color: #6c757d; /* Gray */
+}
+
+.linkedin-card {
+    background-color: #0077b5; /* LinkedIn Blue */
+}
+
+.gitlab-card {
+    background-color: #e24329; /* GitLab Red */
+}
+
+.stackoverflow-card {
+    background-color: #ffc107; /* Stack Overflow Orange */
+    color: #000000; /* Text color */
+}
+
+.twitter-card {
+    background-color: #1da1f2; /* Twitter Blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
 
 
 
@@ -379,7 +549,7 @@ navmenu.css:
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #7a90b7;
+    background-color: #ffffff;
     clip-path: circle(0px at 100% 0%);
     transition: clip-path 0.5s ease;
     z-index: 2;
@@ -390,6 +560,7 @@ navmenu.css:
 }
 
 .nav-links {
+    font-family: 'Furore', sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -439,8 +610,12 @@ navmenu.css:
 }
 
 .nav-links a::after {
-    bottom: 0;
+    bottom: -5px;
     right: 0;
+}
+
+.name-link .name-red {
+    margin-right: 10px;
 }
 
 .nav-links a:hover::before,
@@ -500,6 +675,10 @@ navmenu.css:
         right: 20px;
     }
 
+    .bar {
+        background-color:red;
+    }
+
     .header-container {
         padding: 5px 10px;
     }
@@ -522,6 +701,129 @@ navmenu.css:
     }
 }
 
+
+
+
+shelf.css:
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle at center, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#shelf {
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    margin: auto;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.shelf-header h1 {
+    font-family: 'Furore', sans-serif;
+    font-size: 3.5em;
+    margin-bottom: 40px;
+    color: #fc300c;
+}
+
+.shelf-header p {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.shelf-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* Space between cards */
+}
+
+.shelf-card {
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    height: 200px;
+    /* Ensure cards are squarish */
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    border: 2px solid transparent;
+    /* Transparent border for hover effect */
+}
+
+.shelf-card:hover {
+    transform: scale(1.05);
+    border-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Specific Colors for Cards */
+.medium-card {
+    background-color: #00ab6c;
+    /* Medium Green */
+}
+
+.hackernoon-card {
+    background-color: #02e41d;
+    /* HackerNoon Bright Green */
+}
+
+.devto-card {
+    background-color: #333333;
+    /* Dev.to Dark Grey */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .shelf-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shelf-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
 
 
 
@@ -598,6 +900,7 @@ p {
 }
 
 .intro-text .row {
+    color: rgb(0, 255, 0);
     display: flex;
     gap: 40px;
     margin-top: 20px;
@@ -608,10 +911,6 @@ p {
     font-size: 1.2rem;
     margin: 0;
     text-align: left;
-}
-
-.name-link .name-red {
-    margin-right: 10px;
 }
 
 /* Projects and Experience Section */
@@ -926,11 +1225,6 @@ body, html {
 
 
 
-experience.html:
-
-
-
-
 index.html:
 <!DOCTYPE html>
 <html lang="en">
@@ -1062,6 +1356,20 @@ index.html:
 
 
 
+contact.js:
+// Example: Adding a click event listener to log messages
+document.addEventListener('DOMContentLoaded', function () {
+    const contactCards = document.querySelectorAll('.contact-card');
+    contactCards.forEach(card => {
+        card.addEventListener('click', () => {
+            console.log(`Navigating to ${card.querySelector('.card-link').href}`);
+        });
+    });
+});
+
+
+
+
 footer.js:
 fetch('components/footer.html')
     .then(response => response.text())
@@ -1111,13 +1419,41 @@ function updateBurgerColorForOpenMenu() {
     });
 }
 
-const sectionColors = {
-    0: '#ffffff',
-    1: '#2a5298',
-    2: '#ffffff',
-    3: '#2a5298',
-    4: '#ffffff',
+// Define section colors for different pages
+const pageSectionColors = {
+    index: {
+        0: '#ffffff',
+        1: 'red',
+        2: '#ffffff',
+        3: 'red',
+        4: '#ffffff',
+        5: 'red',
+    },
+    shelf: {
+        0: '#f0f0f0',
+        1: 'red',
+    },
+    contact: {
+        0: '#2a5298',
+        1: 'red',
+    },
+    // Add more pages as needed
 };
+
+// Extract the current page name from the URL
+function getPageName() {
+    const path = window.location.pathname;
+    const page = path.substring(path.lastIndexOf('/') + 1);
+    if (!page.split('.')[0]) {
+        return "index";
+    } else {
+        return page.split('.')[0]; // Return the page name without extension
+    }
+}
+
+// Get the section colors for the current page
+const currentPage = getPageName();
+const sectionColors = pageSectionColors[currentPage] || {};
 
 // Function to update the burger color based on the current active section
 function updateBurgerColorForSection() {
@@ -1166,6 +1502,121 @@ function changeBurgerColor(origin, destination, direction) {
         });
     }
 }
+
+
+
+
+particles-config-contact.js:
+particlesJS('particles-js', {
+    "particles": {
+        "number": {
+            "value": 150,
+            "density": {
+                "enable": true,
+                "value_area": 1000
+            }
+        },
+        "color": {
+            "value": ["#000000", "#ff0000", "#00ff00", "#0000ff"]
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 6
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 0.8,
+            "random": true,
+            "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 5,
+            "random": true,
+            "anim": {
+                "enable": true,
+                "speed": 10,
+                "size_min": 0.1,
+                "sync": false
+            }
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 100,
+            "color": "#000000",
+            "opacity": 0.5,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "bubble"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "repulse"
+            },
+            "resize": true
+        },
+        "modes": {
+            "grab": {
+                "distance": 400,
+                "line_linked": {
+                    "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 200,
+                "size": 10,
+                "duration": 2,
+                "opacity": 1,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
+        }
+    },
+    "retina_detect": true
+});
 
 
 
@@ -1290,96 +1741,75 @@ projects.js:
 
 
 
+shelf.js:
+// Example: Adding a click event listener to log messages
+document.addEventListener('DOMContentLoaded', function () {
+    const shelfCards = document.querySelectorAll('.shelf-card');
+    shelfCards.forEach(card => {
+        card.addEventListener('click', () => {
+            console.log(`Navigating to ${card.querySelector('.card-link').href}`);
+        });
+    });
+});
+
+
+
+
 projects.html:
+
+
+
+
+resume.html:
+
+
+
+
+shelf.html:
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tega Idogun - Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Shelf - Tega Idogun</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/navmenu.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Furore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shelf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <div id="navmenu"></div>
     <div id="fullpage">
         <div class="section">
             <div id="particles-js"></div>
-            <div class="content">
-                <div class="intro">
-                    <img src="images/photo.jpg" alt="Profile Photo" class="profile-photo">
-                    <div class="intro-text">
-                        <h1 class="title">Computer Scientist</h1>
-                        <p class="statement">I like to craft solid and scalable frontend products with great user
-                            experiences.</p>
-                        <div class="row">
-                            <p>Highly skilled at progressive enhancement, design systems & UI Engineering.</p>
-                            <p>Proven experience building successful products for clients across several countries.</p>
-                        </div>
+            <div id="shelf" class="container">
+                <div class="shelf-header">
+                    <h1>My Shelf</h1>
+                    <p>Explore my articles, writings and thinkpieces are hosted on these platforms.</p>
+                </div>
+                <div class="shelf-cards">
+                    <div class="shelf-card medium-card">
+                        <a href="https://medium.com" class="card-link" target="_blank">
+                            <i class="fab fa-medium card-icon"></i>
+                            <span class="card-title">Medium</span>
+                        </a>
+                    </div>
+                    <div class="shelf-card hackernoon-card">
+                        <a href="https://hackernoon.com" class="card-link" target="_blank">
+                            <i class="fab fa-hacker-news card-icon"></i>
+                            <span class="card-title">HackerNoon</span>
+                        </a>
+                    </div>
+                    <div class="shelf-card devto-card">
+                        <a href="https://dev.to" class="card-link" target="_blank">
+                            <i class="fab fa-dev card-icon"></i>
+                            <span class="card-title">Dev.to</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="section" id="academic-works">
-            <div class="content academic-works-container">
-                <div class="academic-text academic-column">
-                    <h2 class="academic-title">Over the years,</h2>
-                    <p class="academic-description">
-                        I have pursued my academic journey with a strong focus on [Your Field]. My research has spanned various topics, including [Research Topics]. I have completed several projects and published papers on subjects like [Subject 1], [Subject 2], and [Subject 3].
-                    </p>
-                    <p class="academic-description">
-                        During my studies, I developed a deep understanding of [Key Concepts], which has allowed me to contribute to [Related Work or Industry]. My thesis work on [Thesis Topic] explored [Key Findings], providing valuable insights into [Specific Area].
-                    </p>
-                    <p class="academic-description">
-                        Additionally, I have presented at conferences and worked on collaborative projects that aimed to [Objective]. These experiences have not only enhanced my knowledge but also equipped me with practical skills in [Skills or Tools].
-                    </p>
-                    <div class="fiu-kfscis-logo">
-                        <img src="images/fiu-kfscis.png" alt="Florida International University - Knight Foundation School of Computing and Information Sciences" class="placeholder-image">
-                    </div>
-                </div>
-                <div class="academic-image academic-column">
-                    <img src="images/graduation.jpg" alt="Academic Works Image" class="placeholder-image">
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="tech-stacks">
-            <p class="academic-description">
-                This is my experience section.
-            </p>
-        </div>          
-
-        <div class="section" id="projects-experience">
-            <div class="content projects-experience-container">
-                <div class="project-column">
-                    <h2 class="project-title">I build & design stuff</h2>
-                    <p class="project-description">Open source projects, web apps and experimentals.</p>
-                    <a href="#" class="project-link">SEE MY WORK <span>&rarr;</span></a>
-                    <img src="images/photo.jpg" alt="Project Image" class="project-image">
-                </div>
-                <div class="divider"></div>
-                <div class="project-column">
-                    <img src="images/photo.jpg" alt="Writing Image" class="project-image">
-                    <h2 class="project-title">I write, sometimes</h2>
-                    <p class="project-description">About design, frontend dev, learning and life.</p>
-                    <a href="#" class="project-link">READ MY ARTICLES <span>&rarr;</span></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section" id="tech-stacks">
-            <p class="academic-description">
-                This is my tech stack section.
-            </p>
-        </div>  
-        
         <div class="section">
             <div id="footer"></div>
         </div>
@@ -1390,6 +1820,7 @@ projects.html:
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="js/navmenu.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/shelf.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
     <script>
         function initFullPage() {
@@ -1414,14 +1845,8 @@ projects.html:
     
         initFullPage();
     </script>
-    
 </body>
-
 </html>
-
-
-
-shelf.html:
 
 
 
@@ -1435,10 +1860,11 @@ Directory structure:
 │   └── navmenu.html
 ├── contact.html
 ├── css
+│   ├── contact.css
 │   ├── footer.css
 │   ├── navmenu.css
+│   ├── shelf.css
 │   └── styles.css
-├── experience.html
 ├── fonts
 │   └── Furore.otf
 ├── images
@@ -1448,13 +1874,17 @@ Directory structure:
 │   └── photo.jpg
 ├── index.html
 ├── js
+│   ├── contact.js
 │   ├── footer.js
 │   ├── navmenu.js
+│   ├── particles-config-contact.js
 │   ├── particles-config.js
-│   └── projects.js
+│   ├── projects.js
+│   └── shelf.js
 ├── merged_contents.sh
 ├── merged_contents.txt
 ├── projects.html
+├── resume.html
 └── shelf.html
 
-6 directories, 22 files
+6 directories, 27 files
