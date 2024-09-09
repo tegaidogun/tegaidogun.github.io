@@ -1,0 +1,18 @@
+
+[RANK: GOLD]
+Name1
+Name2
+Name3
+[/RANK]
+
+[RANK: SILVER]
+Name4
+Name5
+Name6
+[/RANK]
+
+[RANK: BRONZE]
+Name7
+Name8
+Name9
+[/RANK]
