@@ -3,7 +3,7 @@
     /* Increases space between job entries */
     padding-bottom: 4rem;
     /* Adds internal padding */
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--text-color-2);
     /* Optional: Adds a subtle border */
 }
 

@@ -43,3 +43,8 @@ button.btn.ac_btn:hover {
         transform: translateX(100%);
     }
 }
+
+.form-group::placeholder,
+.form-control::placeholder {
+    color: var(--text-color-2);
+}
