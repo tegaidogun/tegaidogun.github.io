@@ -45,7 +45,6 @@ export const Resume = () => {
               ref={iframeRef}
               src="https://drive.google.com/file/d/1QRGcvkVKlRvRL8j39tfDIJj1X25mtsF5/preview"
               width="100%"
-              frameBorder="0"
               style={{ border: "none", overflow: "hidden" }} // Hide scrollbars
               allow="autoplay"
             ></iframe>
