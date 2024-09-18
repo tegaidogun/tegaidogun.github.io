@@ -151,40 +151,43 @@ const services = [
   },
 ];
 
-
 const dataportfolio = [
   {
-    img: "https://picsum.photos/300", // Replace with your actual image URL
+    title: "Physics Augmented Reality Simulation",
     description:
-      "Physics Augmented Reality Simulation: An educational AR physics simulation built for Shellhacks Hackathon, earning first runner-up.",
-    link: "https://github.com/tegaidogun/cosmo-projectiles", // Link to project repository
+      "An educational AR physics simulation built for Shellhacks Hackathon, earning first runner-up.",
+    link: "https://github.com/tegaidogun/cosmo-projectiles",
+    icons: ["unity", "github"],
   },
   {
-    img: "https://picsum.photos/300", // Replace with your actual image URL
+    title: "Data Analysis for BlueGAP",
     description:
-      "Data Analysis for BlueGAP: Automated data preprocessing pipeline for the Blue-Green Action Platform, analyzing water quality across Florida.",
-    link: "https://github.com/tegaidogun/data-analysis-bluegap", // Link to project repository
+      "Automated data preprocessing pipeline for the Blue-Green Action Platform, analyzing water quality across Florida.",
+    link: "https://github.com/tegaidogun/data-analysis-bluegap",
+    icons: ["python", "jupyter", "html", "markdown", "github"],
   },
   {
-    img: "https://picsum.photos/300", // Replace with your actual image URL
+    title: "Crash Shell",
     description:
-      "Crash Shell: A modular shell implemented in Rust, supporting basic command execution, directory navigation, and environment management..",
-    link: "https://github.com/tegaidogun/crash-shell", // Link to project repository
+      "A modular shell implemented in Rust, supporting basic command execution, directory navigation, and environment management.",
+    link: "https://github.com/tegaidogun/crash-shell",
+    icons: ["rust", "github"],
   },
   {
-    img: "https://picsum.photos/300", // Replace with your actual image URL
+    title: "SimpleDirStat",
     description:
-      "SimpleDirStat: A command-line tool for visualizing directory and file size statistics. Provides quick insights into file system usage, supporting features like file type and size filtering.",
-    link: "https://github.com/tegaidogun/simpledirstat", // Link to project repository", // Link to project repository
+      "A command-line tool for visualizing directory and file size statistics. Provides quick insights into file system usage.",
+    link: "https://github.com/tegaidogun/simpledirstat",
+    icons: ["cplusplus", "github"],
   },
   {
-    img: "https://picsum.photos/300", // Replace with your actual image URL
+    title: "Markdown Viewer Browser Plugin",
     description:
-      "Markdown Viewer Browser Plugin: A lightweight browser extension that renders Markdown files directly in the browser with a responsive design, and handling of media elements.",
-    link: "https://github.com/tegaidogun/markdown-viewer-browser-plugin", // Link to project repository
+      "A lightweight browser extension that renders Markdown files directly in the browser with responsive design.",
+    link: "https://github.com/tegaidogun/markdown-viewer-browser-plugin",
+    icons: ["javascript", "css", "github"],
   },
 ];
-
 
 const contactConfig = {
   YOUR_EMAIL: "mail@tegaidogun.dev",
@@ -206,34 +209,16 @@ const socialprofils = {
 
 const blogposts = [
   {
-    title: "How I Built My Portfolio",
-    date: "September 17, 2024",
-    link: "#",
+    title: "How to Use React Hooks",
+    date: "July 15, 2024",
+    platforms: ["medium"], // Dynamic platforms
+    link: "https://medium.com/example-post",
   },
   {
-    title: "The Importance of Clean Code",
-    date: "August 24, 2024",
-    link: "#",
-  },
-  {
-    title: "Mastering React in 2024",
-    date: "July 13, 2024",
-    link: "#",
-  },
-  {
-    title: "Exploring Augmented Reality",
-    date: "June 25, 2024",
-    link: "#",
-  },
-  {
-    title: "AI and Its Impact on Education",
-    date: "May 10, 2024",
-    link: "#",
-  },
-  {
-    title: "Understanding DevOps Principles",
-    date: "April 5, 2024",
-    link: "#",
+    title: "Building with Rust",
+    date: "August 21, 2024",
+    platforms: ["devto"], // Dynamic platforms
+    link: "https://dev.to/example-post",
   },
 ];
 

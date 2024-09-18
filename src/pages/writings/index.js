@@ -2,7 +2,16 @@ import React from "react";
 import "./style.css"; // Ensure the styles are linked correctly
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
+import { FaMedium, FaDev, FaExternalLinkAlt } from "react-icons/fa"; // Import required icons
+import { SiHackernoon } from "react-icons/si"; // Import required icons
 import { meta, blogposts } from "../../content_option"; // Import blog post data
+
+// Map icon names to react-icons components
+const platformIcons = {
+  medium: <FaMedium />,
+  hackernoon: <SiHackernoon />,
+  devto: <FaDev />,
+};
 
 export const Writings = () => {
   return (
@@ -23,10 +32,22 @@ export const Writings = () => {
           {blogposts.map((post, i) => (
             <Col lg="12" key={i} className="mb-4">
               <div className="blog-box">
-                <a href={post.link} className="blog-link">
-                  <h3>{post.title}</h3>
+                <a href={post.link} className="blog-link" target="_blank" rel="noopener noreferrer">
+                  <h3>
+                    {post.title}
+                    {/* Render the platform icons dynamically based on content_option.js */}
+                    <span className="icon-group">
+                      {post.platforms.map((platform, index) => (
+                        <span key={index} className="platform-icon">
+                          {platformIcons[platform]}
+                        </span>
+                      ))}
+                    </span>
+                    <span className="blog-arrow-icon">
+                      <FaExternalLinkAlt />
+                    </span>
+                  </h3>
                   <p className="blog-date">{post.date}</p>
-                  <span className="arrow-icon">↗</span>
                 </a>
               </div>
             </Col>
