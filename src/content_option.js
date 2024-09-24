@@ -193,9 +193,9 @@ const contactConfig = {
   YOUR_EMAIL: "mail@tegaidogun.dev",
   YOUR_FONE: "786-737-5864",
   description: "Feel free to reach out to me for collaborations or inquiries about my work.",
-  YOUR_SERVICE_ID: process.env.REACT_APP_EMAILJS_SERVICE_ID, // Use env variable
-  YOUR_TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID, // Use env variable
-  YOUR_USER_ID: process.env.REACT_APP_EMAILJS_USER_ID, // Use env variable
+  YOUR_SERVICE_ID: process.env.REACT_APP_EMAIL_SERVICE_ID,
+  YOUR_TEMPLATE_ID: process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+  YOUR_USER_ID: process.env.REACT_APP_EMAIL_USER_ID,
 };
 
 const socialprofils = {
