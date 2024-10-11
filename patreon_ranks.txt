@@ -22,18 +22,6 @@ User068
 User069
 User070
 [/RANK]
-[RANK: Legendary]
-User071
-User072
-User073
-User074
-User075
-User076
-User077
-User078
-User079
-User080
-[/RANK]
 [RANK: Mythic]
 User081
 User082
