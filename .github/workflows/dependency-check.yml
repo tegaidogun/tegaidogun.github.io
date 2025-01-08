@@ -27,7 +27,7 @@ jobs:
       run: yarn up "*"
 
     - name: Build Project
-      run: yarn build
+      run: CI=false yarn build
 
     - name: Deploy to gh-pages branch
       run: |
