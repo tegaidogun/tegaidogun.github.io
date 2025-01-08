@@ -32,11 +32,5 @@ jobs:
         git config --global user.name "Eric Idogun"
         git config --global user.email "idogunoghenetega@gmail.com"
         git add .
-        git commit -m "chore: update dependencies"
-
-    - name: Push Changes and Create PR
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git push origin HEAD:update-dependencies
-        gh pr create --title "chore: update dependencies" --body "This PR updates outdated dependencies."
+        git commit -m "chore: update dependencies" || echo "No changes to commit."
+        git push origin main
