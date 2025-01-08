@@ -39,7 +39,7 @@ jobs:
         git checkout -B gh-pages
 
         # Remove everything except the build output (assumes your build output is in 'build' folder)
-        cp -R build/. .
+        cd build
 
         # Commit the build output to gh-pages branch
         git add .
@@ -48,6 +48,7 @@ jobs:
 
     - name: Commit Dependency Changes
       run: |
+        cd ..
         git checkout main
         git add .
         git commit -m "chore: update dependencies" || echo "No changes to commit."
