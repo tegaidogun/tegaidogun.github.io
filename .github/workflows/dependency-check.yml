@@ -3,7 +3,12 @@ name: Dependency Update Check
 on:
   schedule:
     - cron: "0 0 */3 * *"
-  workflow_dispatch: # Allow manual trigger if needed
+  workflow_dispatch:
+  
+permissions:
+  contents: write
+  pull-requests: write 
+
 
 jobs:
   dependency-check:
