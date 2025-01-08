@@ -21,6 +21,9 @@ jobs:
     - name: Install Dependencies
       run: npm install --global yarn
 
+    - name: Install Dependencies
+      run: yarn install
+
     - name: Update Dependencies
       run: yarn upgrade --latest
 
