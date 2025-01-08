@@ -34,15 +34,11 @@ jobs:
         # Setup git configuration
         git config --global user.name "Eric Idogun"
         git config --global user.email "idogunoghenetega@gmail.com"
-
-        ls -la
         
         # Checkout to a new gh-pages branch
         git checkout -B gh-pages
 
         # Remove everything except the build output (assumes your build output is in 'build' folder)
-        rm -rf *
-        ls -la
         cp -R build/. .
 
         # Commit the build output to gh-pages branch
