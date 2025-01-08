@@ -29,6 +29,12 @@ jobs:
     - name: Build Project
       run: CI=false yarn build
 
+    - name: List Current Directory Contents
+      run: ls -la
+
+    - name: List Build Directory Contents
+      run: ls -la build
+
     - name: Deploy to gh-pages branch
       run: |
         # Setup git configuration
