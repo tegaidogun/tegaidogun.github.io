@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "0 0 */3 * *"
   workflow_dispatch:
-  
+
 permissions:
   contents: write
   pull-requests: write 
@@ -28,11 +28,14 @@ jobs:
 
     - name: Build Project
       run: CI=false yarn build
-      
+
     - name: Deploy to gh-pages branch
       run: |
+        # Set up git configuration
         git config --global user.name "Eric Idogun"
         git config --global user.email "idogunoghenetega@gmail.com"
+        
+        # Ensure you're on the main branch and commit dependency updates
         git checkout main
         git add .
         git commit -m "chore: update dependencies" || echo "No changes to commit."
@@ -40,10 +43,19 @@ jobs:
 
     - name: Commit Dependency Changes
       run: |
+        # Switch to gh-pages branch
         git checkout -B gh-pages
+        
+        # Enable extended globbing
+        shopt -s extglob
+        
+        # Remove everything except the build folder
         rm -rf !(build)
+        
+        # Copy the build contents to the root directory
         cp -R build/* .
+
+        # Commit the changes and deploy
         git add . -f
         git commit -m "chore: deploy website" || echo "No changes to commit."
         git push --force origin gh-pages
-        
