@@ -25,7 +25,7 @@ jobs:
       run: yarn install
 
     - name: Update Dependencies
-      run: yarn upgrade --latest
+      run: yarn up "*"
 
     - name: Commit Changes
       run: |
