@@ -38,11 +38,10 @@ jobs:
         # Checkout to a new gh-pages branch
         git checkout -B gh-pages
 
-        # Remove everything except the build output (assumes your build output is in 'build' folder)
-        cd build
-
         # Commit the build output to gh-pages branch
-        git add .
+        cd build
+        git add . -f
+        ls -la
         git commit -m "chore: deploy website" || echo "No changes to commit."
         git push --force origin gh-pages
 
