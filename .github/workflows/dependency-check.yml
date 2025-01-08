@@ -28,18 +28,14 @@ jobs:
 
     - name: Build Project
       run: CI=false yarn build
-
-    - name: List Current Directory Contents
-      run: ls -la
-
-    - name: List Build Directory Contents
-      run: ls -la build
-
+      
     - name: Deploy to gh-pages branch
       run: |
         # Setup git configuration
         git config --global user.name "Eric Idogun"
         git config --global user.email "idogunoghenetega@gmail.com"
+
+        ls -la
         
         # Checkout to a new gh-pages branch
         git checkout -B gh-pages
