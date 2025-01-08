@@ -32,7 +32,7 @@ jobs:
     - name: Deploy to gh-pages branch
       run: |
         git config --global user.name "Eric Idogun"
-        git config --global user.email "idogunoghenetega@gmail.com"\
+        git config --global user.email "idogunoghenetega@gmail.com"
         git checkout main
         git add .
         git commit -m "chore: update dependencies" || echo "No changes to commit."
