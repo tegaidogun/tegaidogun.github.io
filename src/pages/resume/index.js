@@ -38,22 +38,23 @@ export const Resume = () => {
             <h1 className="display-4 mb-4">Resume</h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
-          <Link to="https://drive.usercontent.google.com/download?id=1QRGcvkVKlRvRL8j39tfDIJj1X25mtsF5&export=download&authuser=0">
-          <div id="button_h" className="ac_btn btn">
-            Download Resume
-            <div className="ring one"></div>
-            <div className="ring two"></div>
-            <div className="ring three"></div>
-          </div>
-        </Link>
+          <Link to="https://raw.githubusercontent.com/tegaidogun/tegaidogun.github.io/main/resume.pdf">
+            <div id="button_h" className="ac_btn btn">
+              Download Resume
+              <div className="ring one"></div>
+              <div className="ring two"></div>
+              <div className="ring three"></div>
+            </div>
+          </Link>
         </Row>
         <Row className="justify-content-center">
           <Col lg="12">
             <iframe
               ref={iframeRef}
-              src="https://drive.google.com/file/d/1QRGcvkVKlRvRL8j39tfDIJj1X25mtsF5/preview"
+              title="Resume PDF"  // ✅ Added title for accessibility
+              src="https://raw.githubusercontent.com/tegaidogun/tegaidogun.github.io/main/resume.pdf"
               width="100%"
-              style={{ border: "none", overflow: "hidden" }} // Hide scrollbars
+              style={{ border: "none", overflow: "hidden" }}
               allow="autoplay"
             ></iframe>
           </Col>
