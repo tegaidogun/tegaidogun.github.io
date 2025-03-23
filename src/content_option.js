@@ -1,12 +1,12 @@
 const logotext = "tegaidogun";
 const meta = {
-  title: "Oghenetega Idogun",
+  title: "Eric Idogun",
   description:
-    "My name is Oghenetega Idogun, a Computer Science graduate and Software Developer based in Miami, Florida.",
+    "My name is Eric Oghenetega Idogun, a Computer Science graduate and Software Developer based in Miami, Florida.",
 };
 
 const introdata = {
-  title: "Oghenetega Idogun",
+  title: "Eric Idogun",
   animated: {
     first: "Computer Scientist",
     second: "Software Developer",
