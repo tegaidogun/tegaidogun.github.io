@@ -26,6 +26,18 @@ const dataabout = {
 
 const worktimeline = [
   {
+    jobtitle: "Software Graphics Engineer",
+    company: "Hash Studios LLC",
+    location: "Miami, FL",
+    date: "August 2024 –  Present",
+    description: "Optimizing applications in Unity, incorporating C#, OpenGL, and HLSL to enhance interactivity and performance.",
+    duties: [
+      "Boosted application performance through shader optimization and memory management, reducing latency by 22%.",
+      "Collaborated with teams using Agile methodologies, maintaining a perfect sprint record.",
+      "Automated deployment processes using CI/CD pipelines, reducing release times by 10%"
+    ]
+  },
+  {
     jobtitle: "Software Developer",
     company: "HoloMath Project",
     location: "Miami, FL",
@@ -153,6 +165,13 @@ const services = [
 
 const dataportfolio = [
   {
+    title: "Crash Shell",
+    description:
+      "A modular shell implemented in Rust, supporting basic command execution, directory navigation, and environment management.",
+    link: "https://github.com/tegaidogun/crash-shell",
+    icons: ["rust", "github"],
+  },
+  {
     title: "Physics Augmented Reality Simulation",
     description:
       "An educational AR physics simulation built for Shellhacks Hackathon, earning first runner-up.",
@@ -165,13 +184,6 @@ const dataportfolio = [
       "Automated data preprocessing pipeline for the Blue-Green Action Platform, analyzing water quality across Florida.",
     link: "https://github.com/tegaidogun/data-analysis-bluegap",
     icons: ["python", "jupyter", "html", "markdown", "github"],
-  },
-  {
-    title: "Crash Shell",
-    description:
-      "A modular shell implemented in Rust, supporting basic command execution, directory navigation, and environment management.",
-    link: "https://github.com/tegaidogun/crash-shell",
-    icons: ["rust", "github"],
   },
   {
     title: "SimpleDirStat",
@@ -191,7 +203,7 @@ const dataportfolio = [
 
 const contactConfig = {
   YOUR_EMAIL: "mail@tegaidogun.dev",
-  YOUR_FONE: "786-737-5864",
+  YOUR_FONE: "520-261-5316",
   description: "Feel free to reach out to me for collaborations or inquiries about my work.",
   YOUR_SERVICE_ID: "service_qak11yj",
   YOUR_TEMPLATE_ID: "template_p2acunl",
@@ -202,7 +214,7 @@ const socialprofils = {
   github: "https://github.com/tegaidogun",
   linkedin: "https://linkedin.com/in/oghenetega-idogun",
   twitter: "https://x.com/tegaidogun_",
-  youtube: "https://www.youtube.com/@idoguntega",
+  youtube: "https://www.youtube.com/@idogunoghenetega",
   // Add other social profiles if available
 };
 
