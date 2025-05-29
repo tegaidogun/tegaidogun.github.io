@@ -1,3 +1,9 @@
 name = "tegaidogun-github-io"
 compatibility_date = "2023-06-28"
-pages_build_output_dir = ".next" 
+pages_build_output_dir = ".next"
+
+[skip_files]
+include = [
+  ".next/cache/**",
+  ".next/cache/webpack/**"
+] 
