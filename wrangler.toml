@@ -1,7 +1,18 @@
+name = "tegaidogun-github-io"
+compatibility_date = "2023-06-28"
+pages_build_output_dir = ".next"
+node_compat = true
+
 [build]
 command = "npm install && npm run build"
-publish = ".next"
 
 [build.environment]
 NODE_VERSION = "24.0.2"
-NPM_VERSION = "11.3.0" 
+NPM_VERSION = "11.3.0"
+
+[site]
+bucket = ".next"
+
+[env.production]
+name = "tegaidogun-github-io"
+pages_build_output_dir = ".next" 
