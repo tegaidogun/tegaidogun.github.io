@@ -1,9 +1,10 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-/** @type {import('next').NextConfig} */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const nextConfig = {
-  basePath: "/tegaidogun.github.io",
-  output: "export",
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -17,10 +18,13 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react']
   },
-  webpack(config) {
-    config.resolve.alias['@'] = path.resolve('.');
-    return config;
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname),
+    }
+    return config
   }
-};
+}
 
-export default nextConfig;
+export default nextConfig
