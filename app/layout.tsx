@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { Ubuntu } from "next/font/google"
 import "./globals.css"
 import { meta } from "../content_option"
-import { ThemeProvider } from "@/context/ThemeContext"
+import { ThemeProvider } from "../context/ThemeContext"
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],

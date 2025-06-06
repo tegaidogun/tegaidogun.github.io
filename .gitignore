@@ -28,3 +28,4 @@ yarn-error.log*
 # build folders
 /.next
 /.next/cache/
+/out/
