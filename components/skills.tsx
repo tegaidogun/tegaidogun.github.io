@@ -1,34 +1,99 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { skills } from "@/content-option"
-import * as Fa from "react-icons/fa"
-import * as Si from "react-icons/si"
+import { skills } from "../content_option"
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaCss3Alt,
+  FaHtml5,
+  FaPython,
+  FaUnity,
+  FaRust,
+  FaJs,
+  FaGitAlt,
+  FaDocker,
+  FaJava,
+  FaLinux,
+} from "react-icons/fa"
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiMongodb,
+  SiPostgresql,
+  SiExpress,
+  SiSocketdotio,
+  SiD3Dotjs,
+  SiPrisma,
+  SiMysql,
+  SiTailwindcss,
+  SiStripe,
+  SiCplusplus,
+  SiC,
+  SiOpengl,
+  SiR,
+  SiDotnet,
+} from "react-icons/si"
+import { Code2, Component } from "lucide-react"
 
-export default function Skills() {
-  // This function dynamically gets the icon component based on icon name and type
-  const getIconComponent = (iconName: string, iconType: string) => {
-    if (iconType === "fa") {
-      const IconComponent = Fa[iconName as keyof typeof Fa]
-      return IconComponent ? (
-        <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-          <IconComponent className="text-xl text-blue-600 dark:text-blue-400" />
-        </div>
-      ) : null
-    } else if (iconType === "si") {
-      const IconComponent = Si[iconName as keyof typeof Si]
-      return IconComponent ? (
-        <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-          <IconComponent className="text-xl text-blue-600 dark:text-blue-400" />
-        </div>
-      ) : null
+const Skills = () => {
+  const skillCategories = [
+    { title: "Languages", items: skills.languages, color: "bg-red-500" },
+    { title: "Frameworks", items: skills.frameworks, color: "bg-blue-500" },
+    { title: "Tools", items: skills.tools, color: "bg-green-500" },
+    { title: "Databases", items: skills.databases, color: "bg-purple-500" },
+  ]
+
+  const getIcon = (name: string) => {
+    const size = 24
+    const nameLower = name.toLowerCase()
+
+    switch (nameLower) {
+      case "c":
+        return <SiC size={size} className="text-gray-600" />
+      case "c++":
+        return <SiCplusplus size={size} className="text-blue-600" />
+      case "python":
+        return <FaPython size={size} className="text-yellow-500" />
+      case "c#":
+        return <SiDotnet size={size} className="text-purple-600" />
+      case "javascript":
+        return <FaJs size={size} className="text-yellow-400" />
+      case "rust":
+        return <FaRust size={size} className="text-orange-600" />
+      case "java":
+        return <FaJava size={size} className="text-red-500" />
+      case "r":
+        return <SiR size={size} className="text-blue-500" />
+      case "unity":
+        return <FaUnity size={size} />
+      case "react":
+        return <FaReact size={size} className="text-blue-500" />
+      case "next.js":
+        return <SiNextdotjs size={size} />
+      case "opengl":
+        return <SiOpengl size={size} />
+      case "linux administration":
+        return <FaLinux size={size} />
+      case "git":
+        return <FaGitAlt size={size} className="text-orange-600" />
+      case "docker":
+        return <FaDocker size={size} className="text-blue-500" />
+      case "sql":
+        return <FaDatabase size={size} className="text-indigo-500" />
+      case "mongodb":
+        return <SiMongodb size={size} className="text-green-600" />
+      case "postgresql":
+        return <SiPostgresql size={size} className="text-blue-600" />
+      default:
+        return <Code2 size={size} className="text-gray-500" />
     }
-    return null
   }
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-20 bg-secondary">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,43 +101,51 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Technologies</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">My technical expertise and proficiency levels</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">Skills & Technologies</h2>
+          <div className="w-24 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 w-full">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
-              >
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex items-center">
-                    {getIconComponent(skill.icon, skill.iconType)}
-                    <span className="text-gray-400 mx-2">—</span>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
-                  </div>
-                  <span className="text-blue-600 dark:text-blue-400 font-bold">{skill.value}%</span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-card p-6 rounded-lg"
+            >
+              <div className="flex items-center mb-6">
+                <div className={`w-4 h-4 ${category.color} rounded-full mr-3`}></div>
+                <h3 className="text-xl font-bold text-card-foreground">
+                  {category.title}
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {category.items.map((skill, skillIndex) => (
                   <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.value}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
+                    key={skill.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
                     viewport={{ once: true }}
-                    className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                    whileHover={{ scale: 1.05, x: 10 }}
+                    className="flex items-center p-3 bg-secondary rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+                  >
+                    <div className="text-muted-foreground mr-4">{getIcon(skill.name)}</div>
+                    <span className="text-foreground font-medium">
+                      {skill.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   )
 }
+
+export default Skills

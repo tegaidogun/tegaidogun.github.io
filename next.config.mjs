@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -7,8 +6,12 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['placeholder.svg'],
+    unoptimized: true
   },
+  experimental: {
+    optimizePackageImports: ['lucide-react']
+  }
 }
 
 export default nextConfig

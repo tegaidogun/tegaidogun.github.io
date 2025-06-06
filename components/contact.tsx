@@ -1,49 +1,15 @@
 "use client"
 
-import type React from "react"
-
 import { motion } from "framer-motion"
-import { useState } from "react"
-import { contactConfig } from "@/content-option"
-import { Mail, Phone, Send } from "lucide-react"
+import { Mail, Phone, Github, Linkedin, Twitter } from "lucide-react"
+import { contactConfig, socialprofils } from "../content_option"
+import { useForm, ValidationError } from "@formspree/react"
 
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    try {
-      // EmailJS integration would go here
-      // For demo purposes, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      setSubmitStatus("success")
-      setFormData({ name: "", email: "", message: "" })
-    } catch (error) {
-      setSubmitStatus("error")
-    } finally {
-      setIsSubmitting(false)
-      setTimeout(() => setSubmitStatus("idle"), 3000)
-    }
-  }
-
+const Contact = () => {
+  const [state, handleSubmit] = useForm(contactConfig.YOUR_SERVICE_ID)
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-background">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,134 +17,132 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">{contactConfig.description}</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">
+            Get In Touch
+          </h2>
+          <div className="w-24 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 w-full">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h3>
-
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
-                    <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">Email</p>
-                    <a
-                      href={`mailto:${contactConfig.YOUR_EMAIL}`}
-                      className="text-gray-900 dark:text-white font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                      {contactConfig.YOUR_EMAIL}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
-                    <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">Phone</p>
-                    <a
-                      href={`tel:${contactConfig.YOUR_FONE}`}
-                      className="text-gray-900 dark:text-white font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                      {contactConfig.YOUR_FONE}
-                    </a>
-                  </div>
-                </div>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold text-foreground mb-6">
+              Contact Information
+            </h3>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              {contactConfig.description}
+            </p>
+            <div className="space-y-4">
+              <a
+                href={`mailto:${contactConfig.YOUR_EMAIL}`}
+                className="flex items-center text-muted-foreground hover:text-primary"
+              >
+                <Mail size={20} className="mr-3" />
+                {contactConfig.YOUR_EMAIL}
+              </a>
+              <a
+                href={`tel:${contactConfig.YOUR_FONE}`}
+                className="flex items-center text-muted-foreground hover:text-primary"
+              >
+                <Phone size={20} className="mr-3" />
+                {contactConfig.YOUR_FONE}
+              </a>
+            </div>
+            <div className="flex space-x-4 mt-8">
+              <a
+                href={socialprofils.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary"
+              >
+                <Github size={24} />
+              </a>
+              <a
+                href={socialprofils.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href={socialprofils.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary"
+              >
+                <Twitter size={24} />
+              </a>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            {state.succeeded ? (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative dark:bg-green-900 dark:border-green-700 dark:text-green-300">
+                <strong className="font-bold">Thanks for your message!</strong>
+                <span className="block sm:inline"> I'll get back to you soon.</span>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Name
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="bg-card p-8 rounded-lg shadow-lg"
+              >
+                <div className="mb-6">
+                  <label
+                    htmlFor="email"
+                    className="block text-card-foreground text-sm font-bold mb-2"
+                  >
+                    Email Address
                   </label>
                   <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
                     id="email"
+                    type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    className="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                   />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <div className="mb-6">
+                  <label
+                    htmlFor="message"
+                    className="block text-card-foreground text-sm font-bold mb-2"
+                  >
                     Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none"
+                    className="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                   />
+                  <ValidationError prefix="Message" field="message" errors={state.errors} />
                 </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 font-semibold flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5 mr-2" />
-                      Send Message
-                    </>
-                  )}
-                </button>
-
-                {submitStatus === "success" && (
-                  <p className="text-green-600 dark:text-green-400 text-center">Message sent successfully!</p>
-                )}
-
-                {submitStatus === "error" && (
-                  <p className="text-red-600 dark:text-red-400 text-center">
-                    Failed to send message. Please try again.
-                  </p>
-                )}
+                <div className="flex items-center justify-end">
+                  <motion.button
+                    type="submit"
+                    disabled={state.submitting}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline disabled:bg-muted"
+                  >
+                    Send Message
+                  </motion.button>
+                </div>
               </form>
-            </motion.div>
-          </div>
+            )}
+          </motion.div>
         </div>
       </div>
     </section>
   )
 }
+
+export default Contact

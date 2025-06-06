@@ -1,39 +1,30 @@
-import type { Metadata } from "next"
-import { meta } from "@/content-option"
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import WorkTimeline from "@/components/work-timeline"
-import Skills from "@/components/skills"
-import Services from "@/components/services"
-import Portfolio from "@/components/portfolio"
-import Blog from "@/components/blog"
-import Contact from "@/components/contact"
-import Footer from "@/components/footer"
-
-export const metadata: Metadata = {
-  title: meta.title,
-  description: meta.description,
-  keywords: "software developer, computer science, portfolio, Eric Idogun",
-  authors: [{ name: meta.title }],
-  openGraph: {
-    title: meta.title,
-    description: meta.description,
-    type: "website",
-  },
-}
+"use client"
+import Header from "@/components/Header"
+import Hero from "@/components/Hero"
+import About from "@/components/About"
+import Experience from "@/components/Experience"
+import Skills from "@/components/Skills"
+import Services from "@/components/Services"
+import Portfolio from "@/components/Portfolio"
+import Blog from "@/components/Blog"
+import Contact from "@/components/Contact"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900">
-      <Hero />
-      <About />
-      <WorkTimeline />
-      <Skills />
-      <Services />
-      <Portfolio />
-      <Blog />
-      <Contact />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Services />
+        <Portfolio />
+        <Blog />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </div>
   )
 }

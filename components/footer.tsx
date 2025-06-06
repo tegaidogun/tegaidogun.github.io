@@ -1,55 +1,65 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { socialprofils, logotext } from "@/content-option"
-import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
+import { Github, Linkedin, Twitter, Youtube, Heart } from "lucide-react"
+import { meta, socialprofils } from "../content_option"
 
-const socialIcons = {
-  github: Github,
-  linkedin: Linkedin,
-  twitter: Twitter,
-  youtube: Youtube,
-}
-
-export default function Footer() {
-  const currentYear = new Date().getFullYear()
+const Footer = () => {
+  const socialLinks = [
+    { name: "GitHub", icon: Github, url: socialprofils.github },
+    { name: "LinkedIn", icon: Linkedin, url: socialprofils.linkedin },
+    { name: "Twitter", icon: Twitter, url: socialprofils.twitter },
+    { name: "YouTube", icon: Youtube, url: socialprofils.youtube },
+  ]
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-12">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h3 className="text-2xl font-bold mb-6">{logotext}</h3>
-
-          <div className="flex justify-center space-x-6 mb-8">
-            {Object.entries(socialprofils).map(([platform, url]) => {
-              const IconComponent = socialIcons[platform as keyof typeof socialIcons]
-              return IconComponent ? (
-                <a
-                  key={platform}
-                  href={url}
+    <footer className="bg-secondary py-12">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col items-center">
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex space-x-6 mb-8"
+          >
+            {socialLinks.map((social) => {
+              const IconComponent = social.icon
+              return (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-800 dark:bg-gray-900 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
+                  whileHover={{ scale: 1.2, y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-12 h-12 bg-card rounded-full flex items-center justify-center text-card-foreground hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                  aria-label={social.name}
                 >
-                  <IconComponent className="w-6 h-6" />
-                </a>
-              ) : null
+                  <IconComponent size={20} />
+                </motion.a>
+              )
             })}
-          </div>
+          </motion.div>
 
-          <div className="border-t border-gray-800 dark:border-gray-700 pt-8">
-            <p className="text-gray-400">
-              © {currentYear} {logotext}. All rights reserved.
+          {/* Copyright */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-center text-muted-foreground"
+          >
+            <p className="flex items-center justify-center">
+              Made with <Heart size={16} className="mx-2 text-red-500" /> by {meta.author}
             </p>
-          </div>
-        </motion.div>
+            <p className="mt-2">© {new Date().getFullYear()} All rights reserved.</p>
+          </motion.div>
+        </div>
       </div>
     </footer>
   )
 }
+
+export default Footer

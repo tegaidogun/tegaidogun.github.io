@@ -1,19 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { blogposts } from "@/content-option"
-import { ExternalLink, Calendar } from "lucide-react"
-import { SiMedium, SiDevdotto } from "react-icons/si"
+import { Calendar, Clock, ArrowRight } from "lucide-react"
+import { blogposts } from "../content_option"
 
-const platformIcons = {
-  medium: SiMedium,
-  devto: SiDevdotto,
-}
-
-export default function Blog() {
+const Blog = () => {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4">
+    <section id="blog" className="py-20 bg-secondary">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,49 +15,52 @@ export default function Blog() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Blog Posts</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">My thoughts and insights on technology</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">Latest Blog Posts</h2>
+          <div className="w-24 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogposts.map((post, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+            <motion.article
+              key={post.title}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              whileHover={{ y: -5 }}
+              className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  {post.platforms.map((platform, platformIndex) => {
-                    const IconComponent = platformIcons[platform as keyof typeof platformIcons]
-                    return IconComponent ? (
-                      <IconComponent key={platformIndex} className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-                    ) : null
+              <div className="p-6">
+                <div className="flex items-center text-sm text-muted-foreground mb-4">
+                  <Calendar size={16} className="mr-2" />
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
                   })}
+                  <Clock size={16} className="ml-4 mr-2" />
+                  {post.readTime}
                 </div>
-                <a
+
+                <h3 className="text-xl font-bold text-card-foreground mb-4 line-clamp-2">{post.title}</h3>
+
+                <p className="text-muted-foreground mb-6 leading-relaxed line-clamp-3">{post.excerpt}</p>
+
+                <motion.a
                   href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  whileHover={{ x: 5 }}
+                  className="inline-flex items-center text-primary hover:text-primary/90 font-medium"
                 >
-                  <ExternalLink className="w-5 h-5" />
-                </a>
+                  Read More
+                  <ArrowRight size={16} className="ml-2" />
+                </motion.a>
               </div>
-
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{post.title}</h3>
-
-              <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm">
-                <Calendar className="w-4 h-4 mr-2" />
-                {post.date}
-              </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
     </section>
   )
 }
+
+export default Blog

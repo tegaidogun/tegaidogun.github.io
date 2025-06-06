@@ -1,25 +1,56 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Ubuntu } from "next/font/google"
 import "./globals.css"
-import { meta } from "@/content-option"
+import { meta } from "../content_option"
+import { ThemeProvider } from "@/context/ThemeContext"
 
-const inter = Inter({ subsets: ["latin"] })
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-ubuntu",
+})
 
 export const metadata: Metadata = {
+  metadataBase: new URL(meta.siteUrl),
   title: meta.title,
   description: meta.description,
-    generator: 'v0.dev'
+  keywords: meta.keywords,
+  authors: [{ name: meta.author }],
+  openGraph: {
+    title: meta.title,
+    description: meta.description,
+    url: meta.siteUrl,
+    siteName: meta.title,
+    images: [
+      {
+        url: meta.image,
+        width: 1200,
+        height: 630,
+        alt: meta.title,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: meta.title,
+    description: meta.description,
+    images: [meta.image],
+  },
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+      <body className={`${ubuntu.variable} font-ubuntu antialiased`}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   )
 }
