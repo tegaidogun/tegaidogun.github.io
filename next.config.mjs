@@ -12,7 +12,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['placeholder.svg'],
+    domains: [],
     unoptimized: true
   },
   experimental: {

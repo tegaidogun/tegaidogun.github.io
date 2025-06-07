@@ -52,32 +52,6 @@ const Contact = () => {
                 {contactConfig.YOUR_FONE}
               </a>
             </div>
-            <div className="flex space-x-4 mt-8">
-              <a
-                href={socialprofils.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href={socialprofils.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a
-                href={socialprofils.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Twitter size={24} />
-              </a>
-            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 50 }}

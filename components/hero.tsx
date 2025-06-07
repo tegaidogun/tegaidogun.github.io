@@ -91,7 +91,7 @@ const Hero = () => {
                 className="absolute inset-0 rounded-full border-4 border-secondary border-t-primary"
               />
               <Image
-                src={introdata.your_img_url || "/placeholder.svg?height=400&width=400"}
+                src={introdata.your_img_url}
                 alt="Profile"
                 width={400}
                 height={400}
@@ -108,9 +108,16 @@ const Hero = () => {
           transition={{ delay: 1 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+          <motion.a
+            href="#about"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+            className="cursor-pointer"
+          >
             <ArrowDown className="text-muted-foreground" size={24} />
-          </motion.div>
+          </motion.a>
         </motion.div>
       </div>
     </section>

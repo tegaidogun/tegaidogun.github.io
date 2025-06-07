@@ -5,7 +5,7 @@ export const meta = {
   description:
     "My name is Oghenetega Eric Idogun, a Computer Science graduate and Software Developer based in Tucson, Arizona.",
   author: "Oghenetega Idogun",
-  siteUrl: "https://tegaidogun.github.io",
+  siteUrl: "https://tegaidogun.dev/",
   image: "/assets/user.jpeg",
   keywords: "Software Developer, Computer Scientist, Systems Programmer, Research Engineer, C, C++, Unity, Python, javascript, rust, software engineer",
 };
@@ -102,22 +102,37 @@ export const skills = {
         { name: "Rust", icon: "Code" },
         { name: "Java", icon: "Code" },
         { name: "R", icon: "Code" },
+        { name: "TypeScript", icon: "Code" },
+        { name: "Shell", icon: "Code" },
+        { name: "HTML", icon: "Code" },
+        { name: "Markdown", icon: "Code" },
     ],
     frameworks: [
         { name: "Unity", icon: "Gamepad2" },
         { name: "React", icon: "Atom" },
         { name: "Next.js", icon: "Zap" },
+        { name: "Spring Boot", icon: "Zap" },
+        { name: "Tailwind CSS", icon: "Zap" },
+        { name: "Express.js", icon: "Zap" },
+        { name: "Django", icon: "Zap" },
     ],
     tools: [
         { name: "OpenGL", icon: "Component" },
         { name: "Linux Administration", icon: "Terminal" },
         { name: "Git", icon: "GitBranch" },
         { name: "Docker", icon: "Container" },
+        { name: "Makefile", icon: "Terminal" },
+        { name: "shadcn/ui", icon: "Component" },
+        { name: "Cloudflare", icon: "Component" },
+        { name: "GitHub", icon: "GitBranch" },
+        { name: "Jupyter", icon: "Component" },
     ],
     databases: [
         { name: "SQL", icon: "Database" },
         { name: "MongoDB", icon: "Database" },
         { name: "PostgreSQL", icon: "Database" },
+        { name: "MySQL", icon: "Database" },
+        { name: "Redis", icon: "Database" },
     ],
 };
 
@@ -146,11 +161,27 @@ export const services = [
 
 export const dataportfolio = [
   {
-    title: "Crash Shell",
+    title: "Inventra Sync System",
     description:
-      "A modular shell implemented in Rust, supporting basic command execution, directory navigation, and environment management.",
-    technologies: ["Rust", "GitHub"],
-    link: "https://github.com/tegaidogun/crash-shell",
+      "An end-to-end inventory management and synchronization platform designed for reliability and extensibility. Implements modern web technologies and backend architecture for scalable product tracking.",
+    technologies: ["Java", "Spring Boot", "TypeScript", "Next.js", "PostgreSQL", "Docker"],
+    link: "https://github.com/tegaidogun/inventra-sync-system",
+    demo: "",
+  },
+  {
+    title: "Latency Lens",
+    description:
+      "A browser-based tool that tests and visualizes latency, jitter, and packet loss to global servers. Built using Cloudflare Workers and modern frontend frameworks.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Cloudflare", "shadcn/ui"],
+    link: "https://github.com/tegaidogun/latency-lens",
+    demo: "https://lens.tegaidogun.dev",
+  },
+  {
+    title: "Q-Shell",
+    description:
+      "A Unix-like shell built from scratch to support command parsing, piping, and I/O redirection. Built to deepen systems-level understanding of POSIX-compliant shells.",
+    technologies: ["C", "C++", "Python", "Shell", "Linux", "Makefile"],
+    link: "https://github.com/tegaidogun/q-shell",
     demo: "",
   },
   {
@@ -166,7 +197,7 @@ export const dataportfolio = [
       "Automated data preprocessing pipeline for the Blue-Green Action Platform, analyzing water quality across Florida.",
     technologies: ["Python", "Jupyter", "HTML", "Markdown", "GitHub"],
     link: "https://github.com/tegaidogun/data-analysis-bluegap",
-    demo: "https://github.com/tegaidogun/data-analysis-bluegap",
+    demo: "https://mybinder.org/v2/gh/tegaidogun/data-analysis-bluegap/HEAD?labpath=notebooks",
   },
   {
     title: "SimpleDirStat",
@@ -175,15 +206,7 @@ export const dataportfolio = [
     technologies: ["C++", "GitHub"],
     link: "https://github.com/tegaidogun/simpledirstat",
     demo: "",
-  },
-  {
-    title: "Markdown Viewer Browser Plugin",
-    description:
-      "A lightweight browser extension that renders Markdown files directly in the browser with responsive design.",
-    technologies: ["JavaScript", "CSS", "HTML", "GitHub"],
-    link: "https://github.com/tegaidogun/markdown-viewer-browser-plugin",
-    demo: "https://github.com/tegaidogun/markdown-viewer-browser-plugin",
-  },
+  }
 ];
 
 export const blogposts = [
@@ -191,14 +214,7 @@ export const blogposts = [
     title: "How to Use React Hooks",
     date: "July 15, 2024",
     excerpt: "A blog post about How to Use React Hooks",
-    link: "https://medium.com/example-post",
-    readTime: "5 min read",
-  },
-  {
-    title: "Building with Rust",
-    date: "August 21, 2024",
-    excerpt: "A blog post about Building with Rust",
-    link: "https://dev.to/example-post",
+    link: "",
     readTime: "5 min read",
   },
 ];

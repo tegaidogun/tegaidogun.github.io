@@ -13,6 +13,7 @@
     --primary: 210 40% 50%;
     --primary-foreground: 210 40% 98%;
     --secondary: 220 14.3% 95.9%;
+    --secondary-dark: 220 14.3% 90%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%;
@@ -36,6 +37,7 @@
     --primary: 210 40% 50%;
     --primary-foreground: 210 40% 98%;
     --secondary: 224 71.4% 12.1%;
+    --secondary-dark: 224 71.4% 10%;
     --secondary-foreground: 210 20% 98%;
     --muted: 224 71.4% 12.1%;
     --muted-foreground: 210 20% 65.1%;
@@ -89,24 +91,6 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--secondary));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
 }
 
 /* Smooth transitions for all interactive elements */

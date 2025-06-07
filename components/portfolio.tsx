@@ -2,105 +2,12 @@
 
 import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
-import {
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaCss3Alt,
-  FaHtml5,
-  FaPython,
-  FaUnity,
-  FaRust,
-  FaJs,
-  FaGitAlt,
-  FaDocker,
-} from "react-icons/fa"
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiMongodb,
-  SiPostgresql,
-  SiExpress,
-  SiSocketdotio,
-  SiD3Dotjs,
-  SiPrisma,
-  SiMysql,
-  SiTailwindcss,
-  SiStripe,
-  SiCplusplus,
-  SiC,
-  SiOpengl,
-  SiLinux,
-  SiJupyter
-} from "react-icons/si"
 import { dataportfolio } from "../content_option"
+import { getTechIcon } from "@/lib/icons"
 
 const Portfolio = () => {
-  const getTechIcon = (tech: string) => {
-    const size = 24
-    const techLower = tech.toLowerCase()
-
-    switch (techLower) {
-      case "react":
-        return <FaReact size={size} className="text-blue-500" />
-      case "next.js":
-      case "nextjs":
-        return <SiNextdotjs size={size} />
-      case "node.js":
-      case "nodejs":
-        return <FaNodeJs size={size} className="text-green-500" />
-      case "typescript":
-        return <SiTypescript size={size} className="text-blue-700" />
-      case "mongodb":
-        return <SiMongodb size={size} className="text-green-600" />
-      case "postgresql":
-        return <SiPostgresql size={size} className="text-blue-600" />
-      case "express":
-        return <SiExpress size={size} />
-      case "socket.io":
-        return <SiSocketdotio size={size} />
-      case "d3.js":
-        return <SiD3Dotjs size={size} className="text-orange-500" />
-      case "prisma":
-        return <SiPrisma size={size} className="text-gray-700" />
-      case "mysql":
-        return <SiMysql size={size} className="text-blue-500" />
-      case "tailwind css":
-      case "tailwindcss":
-        return <SiTailwindcss size={size} className="text-teal-500" />
-      case "stripe":
-        return <SiStripe size={size} className="text-indigo-500" />
-      case "unity":
-        return <FaUnity size={size} />
-      case "c++":
-      case "cplusplus":
-        return <SiCplusplus size={size} className="text-blue-600" />
-      case "c":
-        return <SiC size={size} className="text-gray-600" />
-      case "opengl":
-        return <SiOpengl size={size} />
-      case "python":
-        return <FaPython size={size} className="text-yellow-500" />
-      case "rust":
-        return <FaRust size={size} className="text-orange-600" />
-      case "javascript":
-      case "js":
-        return <FaJs size={size} className="text-yellow-400" />
-      case "css":
-        return <FaCss3Alt size={size} className="text-blue-500" />
-      case "html":
-        return <FaHtml5 size={size} className="text-orange-500" />
-      case "jupyter":
-        return <SiJupyter size={size} className="text-orange-600" />
-      case "github":
-        return <Github size={size} />
-      default:
-        return <FaDatabase size={size} className="text-gray-500" />
-    }
-  }
-
   return (
-    <section id="portfolio" className="py-20 bg-secondary">
+    <section id="portfolio" className="py-20 bg-secondary-dark">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
