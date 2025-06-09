@@ -126,6 +126,8 @@ export const skills = {
         { name: "Cloudflare", icon: "Component" },
         { name: "GitHub", icon: "GitBranch" },
         { name: "Jupyter", icon: "Component" },
+        { name: "Vercel", icon: "Zap" },
+        { name: "Linux", icon: "Terminal" },
     ],
     databases: [
         { name: "SQL", icon: "Database" },
@@ -133,6 +135,7 @@ export const skills = {
         { name: "PostgreSQL", icon: "Database" },
         { name: "MySQL", icon: "Database" },
         { name: "Redis", icon: "Database" },
+        { name: "Supabase", icon: "Database" },
     ],
 };
 
@@ -169,6 +172,14 @@ export const dataportfolio = [
     demo: "",
   },
   {
+    title: "PasteDump",
+    description:
+      "A simple and fast pastebin application built with modern web technologies. Create and share text snippets, code, and logs with ease, featuring syntax highlighting, custom expiration times, and a clean, modern interface.",
+    technologies: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "shadcn/ui", "Vercel"],
+    link: "https://github.com/tegaidogun/pastedump",
+    demo: "https://pastedump.tegaidogun.dev",
+  },
+  {
     title: "Latency Lens",
     description:
       "A browser-based tool that tests and visualizes latency, jitter, and packet loss to global servers. Built using Cloudflare Workers and modern frontend frameworks.",
@@ -180,7 +191,7 @@ export const dataportfolio = [
     title: "Q-Shell",
     description:
       "A Unix-like shell built from scratch to support command parsing, piping, and I/O redirection. Built to deepen systems-level understanding of POSIX-compliant shells.",
-    technologies: ["C", "C++", "Python", "Shell", "Linux", "Makefile"],
+    technologies: ["C", "Python", "Shell", "Linux", "Makefile"],
     link: "https://github.com/tegaidogun/q-shell",
     demo: "",
   },
@@ -198,14 +209,6 @@ export const dataportfolio = [
     technologies: ["Python", "Jupyter", "HTML", "Markdown", "GitHub"],
     link: "https://github.com/tegaidogun/data-analysis-bluegap",
     demo: "https://mybinder.org/v2/gh/tegaidogun/data-analysis-bluegap/HEAD?labpath=notebooks",
-  },
-  {
-    title: "SimpleDirStat",
-    description:
-      "A command-line tool for visualizing directory and file size statistics. Provides quick insights into file system usage.",
-    technologies: ["C++", "GitHub"],
-    link: "https://github.com/tegaidogun/simpledirstat",
-    demo: "",
   }
 ];
 
