@@ -24,6 +24,7 @@ yarn-error.log*
 .yarn
 .yarnrc
 .vercel
+.env
 
 # build folders
 /.next

@@ -1,15 +1,15 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Ubuntu } from "next/font/google"
-import "./globals.css"
-import { meta } from "../content_option"
-import { ThemeProvider } from "@/context/ThemeContext"
+import type React from "react";
+import type { Metadata } from "next";
+import { Ubuntu } from "next/font/google";
+import "./globals.css";
+import { meta } from "../content_option";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   variable: "--font-ubuntu",
-})
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(meta.siteUrl),
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     description: meta.description,
     images: [meta.image],
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="scroll-smooth">
@@ -52,5 +52,5 @@ export default function RootLayout({
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

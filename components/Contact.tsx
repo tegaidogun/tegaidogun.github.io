@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Mail, Phone, Github, Linkedin, Twitter } from "lucide-react"
-import { contactConfig, socialprofils } from "../content_option"
-import { useForm, ValidationError } from "@formspree/react"
+import { motion } from "framer-motion";
+import { Mail, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { contactConfig, socialprofils } from "../content_option";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm(contactConfig.YOUR_SERVICE_ID)
+  const [state, handleSubmit] = useForm(contactConfig.YOUR_SERVICE_ID!);
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -62,7 +62,10 @@ const Contact = () => {
             {state.succeeded ? (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative dark:bg-green-900 dark:border-green-700 dark:text-green-300">
                 <strong className="font-bold">Thanks for your message!</strong>
-                <span className="block sm:inline"> I'll get back to you soon.</span>
+                <span className="block sm:inline">
+                  {" "}
+                  I'll get back to you soon.
+                </span>
               </div>
             ) : (
               <form
@@ -82,7 +85,11 @@ const Contact = () => {
                     name="email"
                     className="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                   />
-                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                  />
                 </div>
                 <div className="mb-6">
                   <label
@@ -97,7 +104,11 @@ const Contact = () => {
                     rows={5}
                     className="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                   />
-                  <ValidationError prefix="Message" field="message" errors={state.errors} />
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                  />
                 </div>
                 <div className="flex items-center justify-end">
                   <motion.button
@@ -116,7 +127,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
