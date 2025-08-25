@@ -255,9 +255,9 @@ export const contactConfig = {
   YOUR_FONE: "520-261-5316",
   description:
     "Feel free to reach out to me for collaborations or inquiries about my work.",
-  YOUR_SERVICE_ID: process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
-  YOUR_TEMPLATE_ID: process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
-  YOUR_USER_ID: process.env.NEXT_PUBLIC_YOUR_USER_ID,
+  YOUR_SERVICE_ID: process.env.NEXT_PUBLIC_YOUR_SERVICE_ID || "", //fallback options
+  YOUR_TEMPLATE_ID: process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID || "", //fallback options
+  YOUR_USER_ID: process.env.NEXT_PUBLIC_YOUR_USER_ID || "", //fallback options
 };
 
 export const socialprofils = {

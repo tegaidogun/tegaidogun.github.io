@@ -6,7 +6,11 @@ import { contactConfig, socialprofils } from "../content_option";
 import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm(contactConfig.YOUR_SERVICE_ID!);
+  const formKey = contactConfig.YOUR_SERVICE_ID;
+  if (!formKey) {
+    console.warn("Formspree form key missing, form will be disabled.");
+  }
+  const [state, handleSubmit] = useForm(formKey || "dummy");
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
