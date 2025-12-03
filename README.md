@@ -1,16 +1,16 @@
-# Personal Portfolio Website
+# Portfolio Website
 
-This is the repository for my personal portfolio website, built with Next.js and Tailwind CSS. It's a fully responsive, modern, and easily customizable single-page application designed to showcase my skills, experience, and projects.
+Repository for my personal portfolio website, built with Next.js and Tailwind CSS.
 
-**Live Demo:** [tegaidogun.dev](https://tegaidogun.dev/)
+**Live:** [tegaidogun.dev](https://tegaidogun.dev/)
 
-## 🚀 Getting Started
+## Getting Started
 
 To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-You need to have [Node.js](https://nodejs.org/en/) and npm installed on your machine.
+You need to have node.js installed.
 
 ### Installation & Setup
 
@@ -32,7 +32,7 @@ You need to have [Node.js](https://nodejs.org/en/) and npm installed on your mac
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🎨 Customization
+## Customization
 
 All the content of the portfolio is located in the `content_option.js` file. You can easily customize the portfolio by modifying this file.
 
@@ -50,12 +50,10 @@ All the content of the portfolio is located in the `content_option.js` file. You
 
 After updating `content_option.js`, the website will automatically reflect the changes.
 
-## 🚢 Deployment
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
+Honestly, the easiest way to deploy the website is through Vercel but I prefer using Cloudflare.
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
