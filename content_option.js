@@ -251,7 +251,7 @@ export const blogposts = [
 ];
 
 export const contactConfig = {
-  YOUR_EMAIL: "mail@tegaidogun.dev",
+  YOUR_EMAIL: "ericidogun@proton.me",
   YOUR_FONE: "520-261-5316",
   description:
     "Feel free to reach out to me for collaborations or inquiries about my work.",
