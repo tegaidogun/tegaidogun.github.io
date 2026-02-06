@@ -1,59 +1,37 @@
-# Portfolio Website
+## Portfolio Website
 
-Repository for my personal portfolio website, built with Next.js and Tailwind CSS.
-
-**Live:** [tegaidogun.dev](https://tegaidogun.dev/)
-
-## Getting Started
-
-To get a local copy up and running, follow these simple steps.
-
-### Prerequisites
-
-You need to have node.js installed.
+Repository for my personal portfolio website, built with Next.js and Tailwind CSS. **Live:** [tegaidogun.dev](https://tegaidogun.dev/)
 
 ### Installation & Setup
+
+To get a local copy up and running, you need to have [Node.js](https://nodejs.org/) installed. Then follow these simple steps.
 
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/tegaidogun/tegaidogun.github.io.git
     cd tegaidogun.github.io
     ```
-
+    
 2.  **Install dependencies:**
     ```bash
     npm install
     ```
-
+    
 3.  **Run the development server:**
     ```bash
     npm run dev
     ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 with your browser to see the result.
 
-## Customization
+### Customization
 
-All the content of the portfolio is located in the `content_option.js` file. You can easily customize the portfolio by modifying this file.
+All portfolio content is managed in the `content_option.js` file, making customization simple and straightforward. Any updates made to this file are automatically reflected on the website.
 
--   **`logotext`**: The text for your logo in the header.
--   **`meta`**: Metadata for SEO, including title, description, and keywords.
--   **`introdata`**: The content for the hero section.
--   **`dataabout`**: Your "About Me" information.
--   **`worktimeline`**: Your professional experience.
--   **`skills`**: Your skills, categorized into languages, frameworks, tools, and databases.
--   **`services`**: The services you offer.
--   **`dataportfolio`**: Your featured projects.
--   **`blogposts`**: Your latest blog posts.
--   **`contactConfig`**: Configuration for the contact form, including your email and Formspree details.
--   **`socialprofils`**: Links to your social media profiles.
+### Deployment
 
-After updating `content_option.js`, the website will automatically reflect the changes.
+Honestly, the easiest way to deploy the website is through [Vercel](https://vercel.com) but I personally prefer using [Cloudflare](https://www.cloudflare.com).
 
-## Deployment
+### License
 
-Honestly, the easiest way to deploy the website is through Vercel but I prefer using Cloudflare.
-
-## License
-
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. 
