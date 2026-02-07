@@ -9,7 +9,6 @@ import {
   FaUnity,
   FaRust,
   FaJs,
-  FaGitAlt,
   FaDocker,
   FaJava,
   FaMarkdown,
@@ -38,9 +37,14 @@ import {
   SiShadcnui,
   SiDjango,
   SiRedis,
+  SiVercel,
+  SiFlask,
+  SiSqlite,
+  SiSupabase,
+  SiFirebase,
 } from "react-icons/si"
 import { VscTerminalCmd } from "react-icons/vsc"
-import { Code2, Component, Github } from "lucide-react"
+import { Component, Github, GitBranch } from "lucide-react"
 import { DiGnu } from "react-icons/di";
 
 export const getTechIcon = (tech: string, size = 24) => {
@@ -74,6 +78,7 @@ export const getTechIcon = (tech: string, size = 24) => {
     case "postgresql":
       return <SiPostgresql size={size} color="#4169E1" />
     case "express":
+    case "express.js":
       return <SiExpress size={size} />
     case "socket.io":
       return <SiSocketdotio size={size} />
@@ -115,7 +120,7 @@ export const getTechIcon = (tech: string, size = 24) => {
     case "github":
       return <Github size={size} />
     case "git":
-      return <FaGitAlt size={size} color="#F05032" />
+      return <GitBranch size={size} />
     case "docker":
       return <FaDocker size={size} color="#2496ED" />
     case "linux":
@@ -133,6 +138,16 @@ export const getTechIcon = (tech: string, size = 24) => {
       return <SiDjango size={size} color="#092E20" />
     case "redis":
       return <SiRedis size={size} color="#DC382D" />
+    case "vercel":
+      return <SiVercel size={size} />
+    case "flask":
+      return <SiFlask size={size} color="#000" />
+    case "sqlite":
+      return <SiSqlite size={size} color="#003B57" />
+    case "supabase":
+      return <SiSupabase size={size} color="#3ECF8E" />
+    case "firebase":
+      return <SiFirebase size={size} color="#FFCA28" />
     default:
       return <Component size={size} />
   }

@@ -15,12 +15,12 @@ export const introdata = {
   title: "Oghenetega Idogun",
   animated: {
     first: "Computer Scientist",
-    second: "Software Developer",
+    second: "Software Engineer",
     third: "Systems Programmer",
-    fourth: "Research Engineer",
+    fourth: "Appplications Developer",
   },
   description:
-    "A computer science graduate passionate about software development, artificial intelligence, and innovative problem-solving.",
+    "A computer science graduate based in the United Kingdom passionate about software development, artificial intelligence, and innovative problem-solving.",
   your_img_url: "/assets/user.jpeg",
 };
 
@@ -32,9 +32,22 @@ export const dataabout = {
 
 export const worktimeline = [
   {
+    jobtitle: "Freelance Full-Stack Developer",
+    where: "Self-Employed",
+    location: "Remote, UK",
+    date: "August 2025 – Present",
+    description:
+      "Architecting high-performance utilities, maintaining large codebases and web applications for global clients.",
+    duties: [
+      "Engineered automated systems and APIs that eliminated hours of manual tasks per month for clients.",
+      "Hardened deployment workflows via Docker containerisation, ensuring reproducibility across environments.",
+      "Shipped production services across Python and Rust; maintained them with code reviews, tests, and static analysis.",
+    ],
+  },
+  {
     jobtitle: "Software Engineer",
     where: "Hash Studios LLC",
-    location: "Plantation, Florida, USA",
+    location: "Remote, US",
     date: "August 2024 –  May 2025",
     description:
       "Optimizing applications in Unity, incorporating C#, OpenGL, and HLSL to enhance interactivity and performance.",
@@ -47,7 +60,7 @@ export const worktimeline = [
   {
     jobtitle: "Software Developer",
     where: "HoloMath Project",
-    location: "Miami, Florida, USA",
+    location: "Remote, US",
     date: "October 2023 – May 2024",
     description:
       "Collaborated on a Unity-based project to develop an educational AR app for students.",
@@ -60,7 +73,7 @@ export const worktimeline = [
   {
     jobtitle: "Research Assistant",
     where: "Florida International University",
-    location: "Miami, Florida, USA",
+    location: "Remote, US",
     date: "October 2023 – August 2023",
     description:
       "Conducted research on AI-driven educational content, improving web-based tools for 2,000+ users.",
@@ -83,88 +96,67 @@ export const worktimeline = [
       "Collaborated with faculty to implement new technology, improving user experience.",
     ],
   },
-  {
-    jobtitle: "Information Technology Intern",
-    where: "Pepperoni Foods Limited",
-    location: "Port Harcourt, Rivers, Nigeria",
-    date: "August 2019 – July 2021",
-    description:
-      "Managed IT infrastructure and developed software solutions for the company.",
-    duties: [
-      "Developed an in-house ledger application, saving the company over $2,000 annually.",
-      "Improved server uptime to 99% by implementing Linux administration best practices.",
-      "Researched and introduced new tools that reduced project management time by 10 hours per month.",
-    ],
-  },
 ];
 
 export const skills = {
   languages: [
+    { name: "TypeScript", icon: "Code" },
+    { name: "JavaScript", icon: "Codepen" },
+    { name: "Python", icon: "Code" },
+    { name: "Java", icon: "Code" },
     { name: "C", icon: "Code" },
     { name: "C++", icon: "Code" },
-    { name: "Python", icon: "Code" },
     { name: "C#", icon: "Code" },
-    { name: "JavaScript", icon: "Codepen" },
-    { name: "Rust", icon: "Code" },
-    { name: "Java", icon: "Code" },
-    { name: "R", icon: "Code" },
-    { name: "TypeScript", icon: "Code" },
-    { name: "Shell", icon: "Code" },
-    { name: "HTML", icon: "Code" },
-    { name: "Markdown", icon: "Code" },
   ],
   frameworks: [
-    { name: "Unity", icon: "Gamepad2" },
     { name: "React", icon: "Atom" },
     { name: "Next.js", icon: "Zap" },
-    { name: "Spring Boot", icon: "Zap" },
     { name: "Tailwind CSS", icon: "Zap" },
     { name: "Express.js", icon: "Zap" },
-    { name: "Django", icon: "Zap" },
+    { name: "Flask", icon: "Zap" },
+    { name: "Spring Boot", icon: "Zap" },
+    { name: "Unity", icon: "Gamepad2" },
   ],
   tools: [
-    { name: "OpenGL", icon: "Component" },
-    { name: "Linux Administration", icon: "Terminal" },
-    { name: "Git", icon: "GitBranch" },
     { name: "Docker", icon: "Container" },
+    { name: "Git", icon: "GitBranch" },
+    { name: "Linux", icon: "Component" },
     { name: "Makefile", icon: "Terminal" },
-    { name: "shadcn/ui", icon: "Component" },
     { name: "Cloudflare", icon: "Component" },
-    { name: "GitHub", icon: "GitBranch" },
-    { name: "Jupyter", icon: "Component" },
-    { name: "Vercel", icon: "Zap" },
-    { name: "Linux", icon: "Terminal" },
+    { name: "Vercel", icon: "Component" },
+    { name: "OpenGL", icon: "Component" },
   ],
   databases: [
-    { name: "SQL", icon: "Database" },
-    { name: "MongoDB", icon: "Database" },
     { name: "PostgreSQL", icon: "Database" },
     { name: "MySQL", icon: "Database" },
+    { name: "SQLite", icon: "Database" },
+    { name: "MongoDB", icon: "Database" },
     { name: "Redis", icon: "Database" },
     { name: "Supabase", icon: "Database" },
+    { name: "Firebase", icon: "Database" },
   ],
 };
 
 export const services = [
   {
-    title: "Software & Game Development",
+    title: "Full-Stack Software Engineering",
     description:
-      "Developing efficient, scalable software and creating immersive game experiences using Unity, OpenGL, and various programming languages.",
+      "Designing and building end-to-end web applications with React, Next.js, Node.js, and PostgreSQL, from REST APIs to responsive, production-ready UIs.",
   },
   {
-    title: "Research & AI Solutions",
+    title: "Game & Graphics Engineering",
     description:
-      "Conducting research in systems programming and implementing AI-driven solutions for data analysis, automation, and enhanced user experiences.",
+      "Optimizing real-time rendering and gameplay systems using Unity, C#, C++, OpenGL, and modern graphics pipelines for smooth, high-fidelity experiences.",
   },
   {
-    title: "Web & Data Science",
+    title: "DevOps & CI/CD Automation",
     description:
-      "Building responsive web applications and analyzing complex data to drive informed decisions through machine learning and visualization.",
+      "Containerizing services with Docker and wiring GitHub Actions, Vercel, and Cloudflare into automated delivery pipelines for reliable, repeatable deployments.",
   },
   {
-    title: "Technical Leadership",
+    title: "Data & Systems Tooling",
     description:
-      "Leading technical projects, mentoring teams, and providing architectural guidance for complex software challenges.",
+      "Building data-processing and diagnostic tools in Python and TypeScript to streamline workflows, surface performance insights, and support engineering teams.",
   },
 ];
 
@@ -252,7 +244,7 @@ export const blogposts = [
 
 export const contactConfig = {
   YOUR_EMAIL: "ericidogun@proton.me",
-  YOUR_FONE: "520-261-5316",
+  YOUR_FONE: "+44 07436 309 540",
   description:
     "Feel free to reach out to me for collaborations or inquiries about my work.",
   YOUR_SERVICE_ID: process.env.NEXT_PUBLIC_YOUR_SERVICE_ID || "", //fallback options
