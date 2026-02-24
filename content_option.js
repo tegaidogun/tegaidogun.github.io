@@ -3,7 +3,7 @@ export const logotext = "tegaidogun";
 export const meta = {
   title: "Oghenetega Idogun",
   description:
-    "My name is Oghenetega Eric Idogun, a Computer Science graduate and Software Developer based in Tucson, Arizona.",
+    "My name is Oghenetega Eric Idogun, a Computer Science graduate and Software Developer based in the United Kingdom.",
   author: "Oghenetega Idogun",
   siteUrl: "https://tegaidogun.dev/",
   image: "/assets/user.jpeg",
@@ -243,7 +243,7 @@ export const blogposts = [
 ];
 
 export const contactConfig = {
-  YOUR_EMAIL: "ericidogun@proton.me",
+  YOUR_EMAIL: "idogunoghenetega@gmail.com",
   YOUR_FONE: "+44 07436 309 540",
   description:
     "Feel free to reach out to me for collaborations or inquiries about my work.",
