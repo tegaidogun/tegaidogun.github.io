@@ -1,6 +1,6 @@
 ## Portfolio Website
 
-Repository for my personal portfolio website, built with Next.js and Tailwind CSS. **Live:** [tegaidogun.dev](https://tegaidogun.dev/)
+Repository for my portfolio website, built with Next.js and Tailwind CSS. **Live:** [tegaidogun.dev](https://tegaidogun.dev/)
 
 ### Installation & Setup
 
